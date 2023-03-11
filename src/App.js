@@ -11,9 +11,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Header/>
       <Routes>
-        <Route path='/' element={<Header/>} />
-        <Route path='/home' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:userId' element={<UserPage />} />
         <Route path='/posts' element={<PostsPage />} />
