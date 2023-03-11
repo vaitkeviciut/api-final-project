@@ -1,0 +1,92 @@
+
+.button-new-post-wrapper {
+    .post-create-link {
+        text-decoration: none;
+        color: #4F4F4F;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        
+        .plus-symbol {
+            font-size: 45px;
+            font-weight: 700;
+            padding: 10px 25px;
+            color: white;
+            background-color: #4F4F4F;
+            border-radius: 50%;
+        }
+        .plus-text {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    }
+    .post-create-link:hover {
+        color: rgb(48, 162, 255);
+
+        .plus-symbol {
+            background-color: rgb(48, 162, 255);
+        }
+    }
+}
+
+.one-posts-all-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .one-post-wrapper {
+        background-color: white;
+        padding: 50px 100px 40px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+
+        .user-shortcut-wrapper {
+            display: flex;
+            gap: 20px;
+
+            .user-photo-small {
+                border-radius: 50%;
+            }
+            .user-shortcut-near-photo-wrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .user-name-link {
+                    text-decoration: none;
+                    color: #4F4F4F;
+
+                    .user-name-username-wrapper {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+
+                        .user-name-post {
+                            margin: 0;
+                        }
+                    }
+                    .user-company-wrapper {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .post-text-wrapper {
+            .posts-list-item-link {
+                text-decoration: none;
+                color: #4F4F4F;
+
+                .post-title {
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin: 20px 0;
+                }
+                .post-body {
+                    font-size: 15px;
+                    color: #959595;
+                }
+            }
+        }
+    }
+}
