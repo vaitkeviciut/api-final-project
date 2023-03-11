@@ -41,37 +41,7 @@
         display: flex;
         flex-direction: column;
 
-        .user-shortcut-wrapper {
-            display: flex;
-            gap: 20px;
-
-            .user-photo-small {
-                border-radius: 50%;
-            }
-            .user-shortcut-near-photo-wrapper {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-                .user-name-link {
-                    text-decoration: none;
-                    color: #4F4F4F;
-
-                    .user-name-username-wrapper {
-                        display: flex;
-                        gap: 10px;
-                        align-items: center;
-
-                        .user-name-post {
-                            margin: 0;
-                        }
-                    }
-                    .user-company-wrapper {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
+        
         .post-text-wrapper {
             .posts-list-item-link {
                 text-decoration: none;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Header from '../Header/Header'
 import PageWrapper from '../PageWrapper/PageWrapper'
+import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import './UserPage.scss';
 
 import userImage from '../images/user-picture-small.jpg';
@@ -9,23 +9,27 @@ import userImage from '../images/user-picture-small.jpg';
 const UserPage = () => {
     const { userId } =useParams();
     const [user, setUser] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [address, setAddress] = useState('');
+    const [map, setMap] = useState('');
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/${userId}?_expand=posts`)
+        fetch(`http://localhost:3000/users/${userId}?_embed=posts`)
             .then(res => res.json())
             .then(userData => {
                 console.log(userData)
                 setUser(userData)
-                setPosts(userData)
+                setPosts(userData.posts)
+                setCompanyName(userData.company)
+                setAddress(userData.address)
+                setMap(userData.address.geo)
             })
     }, [])
-
-
+    
 
   return (
     <div>
-      <Header />
       <div id='page-content'>
       <PageWrapper>
         <div className='user-info-wrapper'>
@@ -38,7 +42,7 @@ const UserPage = () => {
               <span className='username-text'>({user.username})</span>
             </div>
             <div className='user-company-wrapper'>
-              <span className='user-company-item'>Works @ {user.company.name}</span>
+              <span className='user-company-item'>Works @ {companyName.name}</span>
               <a href='./#' className='user-web-item'>{user.website}</a>
             </div>
             <ul className='user-contacts-list'>User contacts:
@@ -50,14 +54,34 @@ const UserPage = () => {
               </li>
             </ul>
             <div className='user-address-wrapper'>
-              <a className='adress-link' href={`https://www.google.com/maps/place/${user.address.geo.lat}, ${user.address.geo.lng}`} target='_blank' >{user.address.street} street - {user.address.suite}, {user.address.city}, {user.address.zipcode}</a>
+              <a className='adress-link' href={`https://www.google.com/maps/place/${map.lat}, ${map.lng}`} target='_blank' >{address.street} street - {address.suite}, {address.city}, {address.zipcode}</a>
             </div>
           </div>
         </div>
 
-        {posts && posts.length > 0 && posts.map((post, index) => (
-          <div key={index} className='posts-wrapper'>{user.post}</div>
-        ))}
+
+          <div  className='posts-wrapper'>
+            <h4 className='posts-title'>User posts:</h4>
+
+          {posts && posts.length > 0 && posts.map((post, index) => (
+            <div key={index} className='user-post-wrapper-link'>
+
+            <UserShortcutWrapper
+              image={userImage}
+              userId={post.userId}
+              name={user.name}
+              username={user.username}
+              companyName={user.company.name}
+              postId={post.id}
+              />
+
+              <a className='post-link' href={post.id}>
+                
+              </a>
+            </div>
+            ))}
+
+            </div>
         
         <div className='albums-wrapper'></div>
       </PageWrapper>

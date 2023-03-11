@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import Header from '../Header/Header'
 import PageWrapper from '../PageWrapper/PageWrapper'
 import './PostsPage.scss'
+import UserShortcutWrapper from '../partials/UserShortcutWrapper';
 
 import userImage from '../images/user-picture-small.jpg';
 
@@ -36,11 +36,7 @@ const PostsPage = () => {
     .then((json) => console.log(json));
   }
 
-  const deletePostHandler = (id) => {
-    fetch(`http://localhost:3000/posts/${id}`, {
-        method: 'DELETE',
-        });
-  	}
+  
 
   const editPostHandler = () => {
     fetch('http://localhost:3000/posts/2', {
@@ -62,7 +58,6 @@ const PostsPage = () => {
 
   return (
     <div>
-      <Header />
       <PageWrapper>
         <div className='button-new-post-wrapper'>
           <a className='post-create-link' href='./#'>
@@ -78,23 +73,18 @@ const PostsPage = () => {
         {posts && posts.length > 0 && posts.map((post, index) => (
             <div className="one-posts-all-wrapper" key={index}>
                 <div className="one-post-wrapper">
-                    <div className="user-shortcut-wrapper">
-                        <img className="user-photo-small" src={userImage} alt={userImage} width='60' />
-                        <div className="user-shortcut-near-photo-wrapper">
-                            <Link className="user-name-link" to={`apipage/users/` + post.userId}>
-                                <div className="user-name-username-wrapper">
-                                    <h3 className="user-name-post">{post.user.name}</h3>
-                                    <span className="username-text-post">({post.user.username})</span>
-                                </div>
-                                <div className="user-company-wrapper">
-                                    <span className="user-company-item">Works @ {post.user.company.name}</span>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className='post-button-wrapper'>
-                        <button onClick={() => deletePostHandler(post.id)}>Delete</button>
-                    </div>
+                  
+
+
+                    <UserShortcutWrapper
+                    image={userImage}
+                    userId={post.userId}
+                    name={post.user.name}
+                    username={post.user.username}
+                    companyName={post.user.company.name}
+                    postId={post.id}
+                    />
+                    
                     <div className="post-text-wrapper">
                         <Link className='posts-list-item-link' to={`apipage/posts/` + post.id}>
                             <h2 className="post-title">{post.title}</h2>

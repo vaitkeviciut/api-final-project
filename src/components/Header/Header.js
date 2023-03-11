@@ -8,13 +8,13 @@ const Header = () => {
     <header>
       <div className='navigation-wrapper'>
       <div className='logo-wrapper'>
-        <Link className='logo-link' to='/home'>
+        <Link className='logo-link' to='/'>
           <img className='logo' src={logo} alt='logo' width='60' />
         </Link>
       </div>
       <ul className='nav-list'>
         <li className='nav-list-item'>
-          <NavLink className='nav-list-item-link' to='/home'>Home</NavLink>
+          <NavLink className='nav-list-item-link' to='/'>Home</NavLink>
         </li>
         <li className='nav-list-item'>
           <NavLink className='nav-list-item-link' to='/users'>Users</NavLink>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../Header/Header'
 import PageWrapper from '../PageWrapper/PageWrapper'
 import './UsersPage.scss';
 
@@ -18,7 +17,6 @@ const UsersPage = () => {
 
   return (
     <div>
-      <Header />
       <div id='page-content'>
         <PageWrapper>
           <ul className='users-list'>
