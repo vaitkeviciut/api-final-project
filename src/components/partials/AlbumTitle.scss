@@ -1,0 +1,16 @@
+.album-link {
+    border-top: 1px solid rgb(204, 204, 204);
+    display: inline-block;
+    text-decoration: none;
+    color: #4F4F4F;
+
+    .user-album-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+.album-link:hover {
+    color: rgb(48, 162, 255);
+}

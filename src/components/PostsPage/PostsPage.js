@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 import PageWrapper from '../PageWrapper/PageWrapper'
-import './PostsPage.scss'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper';
+import PostContent from '../partials/PostContent'
+import CreatePostForm from './CreatePostForm'
+import './PostsPage.scss'
 
 import userImage from '../images/user-picture-small.jpg';
 
@@ -20,55 +21,35 @@ const PostsPage = () => {
       })
     }, [])
 
-  const newPostHandler = () => {
-    fetch(`http://localhost:3000/posts`, {
-    method: 'POST',
-    body: JSON.stringify({
-        title: 'Sukurtas pirmas postas',
-        body: 'Sukurto posto turinys',
-        userId: 1,
-    }),
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-    },
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-  }
 
   
 
-  const editPostHandler = () => {
-    fetch('http://localhost:3000/posts/2', {
-    method: 'PUT',
-    body: JSON.stringify({
-        id: 2,
-        title: 'Edited post',
-        body: 'Edited post content',
-        userId: 1,
-    }),
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-    },
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-    }
+  // const editPostHandler = () => {
+  //   fetch('http://localhost:3000/posts/2', {
+  //   method: 'PUT',
+  //   body: JSON.stringify({
+  //       id: 2,
+  //       title: 'Edited post',
+  //       body: 'Edited post content',
+  //       userId: 1,
+  //   }),
+  //   headers: {
+  //       'Content-type': 'application/json; charset=UTF-8',
+  //   },
+  //   })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log(json));
+  //   }
 
 
   return (
     <div>
       <PageWrapper>
         <div className='button-new-post-wrapper'>
-          <a className='post-create-link' href='./#'>
-            <button onClick={newPostHandler}>Add Post</button>
-            <span className='plus-symbol'>+</span>
-            <span className='plus-text'>Create Post</span>
-            </a>
           
-          <button onClick={editPostHandler}>Edit 2</button>
+              <CreatePostForm />
+
         </div>
-        
         
         {posts && posts.length > 0 && posts.map((post, index) => (
             <div className="one-posts-all-wrapper" key={index}>
@@ -85,12 +66,12 @@ const PostsPage = () => {
                     postId={post.id}
                     />
                     
-                    <div className="post-text-wrapper">
-                        <Link className='posts-list-item-link' to={`apipage/posts/` + post.id}>
-                            <h2 className="post-title">{post.title}</h2>
-                            <p className="post-body">{post.body}</p>
-                        </Link>
-                    </div>
+                    <PostContent 
+                    title={post.title}
+                    body={post.body}
+                    postId={post.id}
+                    />
+                    
                 </div>
                 
                 

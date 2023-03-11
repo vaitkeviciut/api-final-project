@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper'
+import PostContent from '../partials/PostContent'
+import AlbumTitle from '../partials/AlbumTitle'
 import './UserPage.scss';
 
 import userImage from '../images/user-picture-small.jpg';
@@ -13,17 +15,21 @@ const UserPage = () => {
     const [address, setAddress] = useState('');
     const [map, setMap] = useState('');
     const [posts, setPosts] = useState([]);
+    const [albums, setAlbums] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/${userId}?_embed=posts`)
+        fetch(`http://localhost:3000/users/${userId}?_embed=posts&_embed=albums`)
             .then(res => res.json())
             .then(userData => {
                 console.log(userData)
                 setUser(userData)
-                setPosts(userData.posts)
                 setCompanyName(userData.company)
                 setAddress(userData.address)
                 setMap(userData.address.geo)
+
+                setPosts(userData.posts)
+
+                setAlbums(userData.albums)
             })
     }, [])
     
@@ -60,11 +66,11 @@ const UserPage = () => {
         </div>
 
 
-          <div  className='posts-wrapper'>
-            <h4 className='posts-title'>User posts:</h4>
+        <div  className='posts-wrapper'>
+          <h4 className='posts-title'>User posts:</h4>
 
-          {posts && posts.length > 0 && posts.map((post, index) => (
-            <div key={index} className='user-post-wrapper-link'>
+        {posts && posts.length > 0 && posts.map((post, index) => (
+          <div key={index} className='user-post-wrapper-link'>
 
             <UserShortcutWrapper
               image={userImage}
@@ -73,17 +79,38 @@ const UserPage = () => {
               username={user.username}
               companyName={user.company.name}
               postId={post.id}
-              />
+            />
 
-              <a className='post-link' href={post.id}>
-                
-              </a>
-            </div>
+            <PostContent 
+              title={post.title}
+              body={post.body}
+              postId={post.id}
+            />
+
+          </div>
+          ))}
+
+        </div>
+        
+        <div className='albums-wrapper'>
+          <h4 className='albums-title'>User albums:</h4>
+          <div className='albums-link-wrapper'>
+
+            {albums && albums.length > 0 && albums.map((album, index) => (
+
+              <AlbumTitle
+                key={index}
+                title={album.title}
+                albumId={album.id}
+              />
             ))}
 
             </div>
-        
-        <div className='albums-wrapper'></div>
+
+          
+        </div>
+
+
       </PageWrapper>
 
       </div>
