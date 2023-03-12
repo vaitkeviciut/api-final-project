@@ -1,15 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import DeleteButton from '../partials/DeleteButton'
 import './UserItem.scss'
 
 const UserItem = ({ userId, name, postsLength }) => {
-
-    const deleteUserHandler = (userId) => {
-        fetch(`http://localhost:3000/users/${userId}`, {
-            method: 'DELETE',
-        });
-    }
-
   return (
     <li className='users-list-item'>
         <div className='user-text-wrapper'>
@@ -18,9 +12,7 @@ const UserItem = ({ userId, name, postsLength }) => {
             </Link>
             <span className='user-posts-count'>({postsLength} posts)</span>
         </div>
-        <div className='user-delete-button-wrapper'>
-            <button className='delete-button' onClick={() => deleteUserHandler(userId)}>x</button>
-        </div>
+        <DeleteButton userId={userId} />
     </li>
   )
 }

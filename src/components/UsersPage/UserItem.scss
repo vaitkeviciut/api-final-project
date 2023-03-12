@@ -1,0 +1,30 @@
+
+
+.users-list-item {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 17px;
+
+    .user-text-wrapper {
+        display: flex;
+        gap: 10px;
+        
+        .users-list-item-link {
+            text-decoration: none;
+            color: #4F4F4F;
+            
+        }
+        .users-list-item-link:hover {
+            color: rgb(48, 162, 255);
+            
+        }
+        .user-posts-count {
+            color: #8a8a8a;
+            font-size: 13px;
+        }
+    }
+}

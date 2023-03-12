@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import PageWrapper from '../PageWrapper/PageWrapper';
 import CreateUserForm from './CreateUserForm';
 import UserItem from './UserItem';
@@ -10,7 +9,6 @@ const UsersPage = () => {
   const [formIsVisible, setFormIsVisible] = useState(false)
 
   const formDefaults = {
-    id: null,
     name: '',
     username: '',
     email: '',

@@ -231,9 +231,8 @@
       }
     },
     {
-      "id": 11,
       "name": "Indre Vaitkeviciute",
-      "username": "indre.vaitke",
+      "username": "sca",
       "email": "indre.vaitkeviciute96@gmail.com",
       "phone": "+37063409771",
       "street": "Tujų g. 11-27",
@@ -241,20 +240,8 @@
       "city": "Vilnius",
       "zipcode": "05116",
       "website": "lalalala",
-      "companyName": "lalalllaa"
-    },
-    {
-      "id": 12,
-      "name": "",
-      "username": "",
-      "email": "",
-      "phone": "",
-      "street": "",
-      "suite": "",
-      "city": "",
-      "zipcode": "",
-      "website": "",
-      "companyName": ""
+      "companyName": "lalalllaa",
+      "id": 11
     }
   ],
   "posts": [
@@ -265,10 +252,10 @@
       "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
     },
     {
+      "userId": 1,
       "id": 2,
-      "title": "Edited post",
-      "body": "Edited post content",
-      "userId": 1
+      "title": "qui est esse",
+      "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     },
     {
       "userId": 1,
@@ -738,20 +725,6 @@
       "author": "Indre",
       "email": "indre.vaitkeviciute96@gmail.com",
       "id": 99
-    },
-    {
-      "id": 100,
-      "title": "Laba diena",
-      "body": "Laba diena su vistiena, kaip cia uzbaigti sita projekta..",
-      "author": "indre",
-      "email": "indre.vaitkeviciute96@gmail.com"
-    },
-    {
-      "id": 101,
-      "title": "",
-      "body": "",
-      "author": "",
-      "email": ""
     }
   ],
   "albums": [

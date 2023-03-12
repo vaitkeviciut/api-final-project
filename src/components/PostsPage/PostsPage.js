@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import PageWrapper from '../PageWrapper/PageWrapper'
-// import UserShortcutWrapper from '../partials/UserShortcutWrapper';
 import PostContent from '../partials/PostContent'
 import CreatePostForm from './CreatePostForm'
 import './PostsPage.scss'
 
-// import userImage from '../images/user-picture-small.jpg';
+
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([])
@@ -22,14 +21,14 @@ const PostsPage = () => {
 const [formData, setFormData] = useState(formDefaults)
 
 
-    useEffect(() => {
-      fetch(`http://localhost:3000/posts`)
-      .then(res => res.json())
-      .then(postsData => {
-          console.log(postsData)
-          setPosts(postsData)
+useEffect(() => {
+  fetch(`http://localhost:3000/posts`)
+  .then(res => res.json())
+      .then(posts => {
+          console.log(posts)
+          setPosts(posts)
       })
-    }, [])
+}, [])
 
     const formInputHandler = (event) => {
       setFormData(prevState => {
@@ -65,35 +64,19 @@ const [formData, setFormData] = useState(formDefaults)
           <CreatePostForm onCreateNewPost={createNewPostHendler} onFormInput={formInputHandler} formData={formData} formSetUp={setFormIsVisible} />
           ):(
             <button onClick={() => setFormIsVisible(true)} className='post-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create Post</span></button>
-          )
-          }
-        
+          )}
         </div>
      
-        {posts && posts.length > 0 && posts.map((post, index) => (
-            <div className="one-posts-all-wrapper" key={index}>
-                <div className="one-post-wrapper">
-
-                    {/* <UserShortcutWrapper
-                    image={userImage}
-                    userId={post.userId}
-                    name={post.user.name}
-                    username={post.user.username}
-                    companyName={post.user.company.name}
-                    postId={post.id}
-                    /> */}
-                    
-                    <PostContent 
-                    title={post.title}
-                    body={post.body}
-                    postId={post.id}
-                    />
-                    
-                </div>
-                
-                     
+            <div className="one-posts-all-wrapper" >
+            {posts && posts.length > 0 && posts.map((post, index) => (
+                <PostContent 
+                  key={index}
+                  title={post.title}
+                  body={post.body}
+                  postId={post.id}
+                />
+              ))}
             </div>
-        ))}
         
       </PageWrapper>
     </div>

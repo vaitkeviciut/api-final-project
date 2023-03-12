@@ -4,6 +4,8 @@ import PageWrapper from '../PageWrapper/PageWrapper'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import PostContent from '../partials/PostContent'
 import AlbumTitle from '../partials/AlbumTitle'
+import CreatePostForm from '../PostsPage/CreatePostForm'
+import EditUserForm from './EditUserForm'
 import './UserPage.scss';
 
 import userImage from '../images/user-picture-small.jpg';
@@ -16,6 +18,34 @@ const UserPage = () => {
     const [map, setMap] = useState('');
     const [posts, setPosts] = useState([]);
     const [albums, setAlbums] = useState([]);
+    const [postFormIsVisible, setPostFormIsVisible] = useState(false)
+    const [editFormIsVisible, setEditFormIsVisible] = useState(false)
+
+    const userFormDefaults = {
+      id: userId,
+      name: '',
+      username: '',
+      email: '',
+      phone: '',
+      street: '',
+      suite: '',
+      city: '',
+      zipcode: '',
+      website: '',
+      companyName: '',
+  }
+
+  const [userFormData, setUserFormData] = useState(userFormDefaults)
+
+    const postFormDefaults = {
+      id: null,
+      title: '',
+      body: '',
+      author: '',
+      email: '',
+  }
+  
+  const [postFormData, setPostFormData] = useState(postFormDefaults)
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/${userId}?_embed=posts&_embed=albums`)
@@ -32,13 +62,87 @@ const UserPage = () => {
                 setAlbums(userData.albums)
             })
     }, [])
+
+    const userFormInputHandler = (event) => {
+      setUserFormData(prevState => {
+          const updatedData  = {...prevState}
+          updatedData[event.target.name] = event.target.value
+          return updatedData 
+      });
+  };
+
+    const postFormInputHandler = (event) => {
+      setPostFormData(prevState => {
+          const updatedData  = {...prevState}
+          updatedData[event.target.name] = event.target.value
+          return updatedData 
+      });
+  };
+
+    const createNewPostHendler = () => {
+      fetch(`http://localhost:3000/posts`, {
+      method: 'POST',
+      body: JSON.stringify(
+          {...postFormData}
+      ),
+      headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+      },
+      })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+      }
+
+      const deleteUserHandler = (userId) => {
+        fetch(`http://localhost:3000/users/${userId}`, {
+            method: 'DELETE',
+        });
+    }
+
+    const editUserHandler = (userId) => {
+      fetch(`http://localhost:3000/users/${userId}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          id: userId,
+          name: user.name.value,
+          username: user.username.value,
+          email: user.email.value,
+          phone: user.phone.value,
+          street: user.address.street.value,
+          suite: user.address.suite.value,
+          city: user.address.city.value,
+          zipcode: user.address.zipcode.value,
+          website: user.website.value,
+          companyName: user.company.name.value,
+
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    }
     
 
   return (
     <div>
       <div id='page-content'>
       <PageWrapper>
+        <div className='user-delete-button-wrapper'>
+
+          {editFormIsVisible ? (
+          <EditUserForm onEditUser={() => editUserHandler(userId)} onFormInput={userFormInputHandler} formData={userFormData} formSetUp={setEditFormIsVisible} />
+          ):(
+            <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
+            )
+          }
+
+            <button className='delete-button' onClick={() => deleteUserHandler(userId)}>x</button>
+        </div>
         <div className='user-info-wrapper'>
+
+
           <div className='user-photo-wrapper'>
             <img className='user-photo' src={userImage} width='250' alt='user' />
           </div>
@@ -66,10 +170,23 @@ const UserPage = () => {
         </div>
 
 
+        <div className='button-new-post-wrapper'>
+
+          {postFormIsVisible ? (
+
+          <CreatePostForm onCreateNewPost={createNewPostHendler} onFormInput={postFormInputHandler} formData={postFormData} formSetUp={setPostFormIsVisible} />
+          ):(
+            <button onClick={() => setPostFormIsVisible(true)} className='post-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create Post</span></button>
+          )
+          }
+
+        </div>
+
         <div  className='posts-wrapper'>
+
           <h4 className='posts-title'>User posts:</h4>
 
-        {posts && posts.length > 0 && posts.map((post, index) => (
+          {posts && posts.length > 0 && posts.map((post, index) => (
           <div key={index} className='user-post-wrapper-link'>
 
             <UserShortcutWrapper

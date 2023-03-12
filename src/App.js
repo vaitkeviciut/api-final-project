@@ -4,7 +4,9 @@ import HomePage from './components/HomePage/HomePage'
 import UsersPage from './components/UsersPage/UsersPage'
 import UserPage from './components/UsersPage/UserPage'
 import PostsPage from './components/PostsPage/PostsPage'
+import PostPage from './components/PostsPage/PostPage'
 import AlbumsPage from './components/AlbumsPage/AlbumsPage'
+// import AlbumPage from './components/AlbumsPage/AlbumPage'
 
 import './App.css';
 
@@ -14,10 +16,16 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<HomePage />} />
+
         <Route path='/users' element={<UsersPage />} />
         <Route path='/users/:userId' element={<UserPage />} />
+
         <Route path='/posts' element={<PostsPage />} />
+        <Route path='/posts/:postId' element={<PostPage />} />
+
         <Route path='/albums' element={<AlbumsPage />} />
+        {/* <Route path='/albums/:albumId' element={<AlbumPage />} /> */}
+
         <Route path='*' element={
           <div>
             <h1>404 Error</h1>

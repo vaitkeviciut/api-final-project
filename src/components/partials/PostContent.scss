@@ -1,16 +1,31 @@
 .post-text-wrapper {
-    .posts-list-item-link {
+    display: flex;
+    gap: 10px;
+
+    .posts-list-item-link-wrapper {
+        .posts-list-item-link {
         text-decoration: none;
         color: #4F4F4F;
 
-        .post-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 20px 0;
+            .post-title {
+                font-size: 20px;
+                font-weight: 700;
+                margin: 20px 0;
+            }
+            .post-body {
+                font-size: 15px;
+                color: #959595;
+            }
         }
-        .post-body {
-            font-size: 15px;
-            color: #959595;
+        .posts-list-item-link:hover {
+            .post-title {
+                color: rgb(48, 162, 255);
+            }
         }
     }
+    .user-delete-button-wrapper {
+        display: flex;
+        align-items: flex-start;
+    }
+    
 }
