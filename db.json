@@ -229,6 +229,32 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
+    },
+    {
+      "id": 11,
+      "name": "Indre Vaitkeviciute",
+      "username": "indre.vaitke",
+      "email": "indre.vaitkeviciute96@gmail.com",
+      "phone": "+37063409771",
+      "street": "Tujų g. 11-27",
+      "suite": "27",
+      "city": "Vilnius",
+      "zipcode": "05116",
+      "website": "lalalala",
+      "companyName": "lalalllaa"
+    },
+    {
+      "id": 12,
+      "name": "",
+      "username": "",
+      "email": "",
+      "phone": "",
+      "street": "",
+      "suite": "",
+      "city": "",
+      "zipcode": "",
+      "website": "",
+      "companyName": ""
     }
   ],
   "posts": [
@@ -273,12 +299,6 @@
       "id": 7,
       "title": "magnam facilis autem",
       "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
-    },
-    {
-      "userId": 1,
-      "id": 8,
-      "title": "dolorem dolore est ipsam",
-      "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
     },
     {
       "userId": 2,
@@ -718,6 +738,20 @@
       "author": "Indre",
       "email": "indre.vaitkeviciute96@gmail.com",
       "id": 99
+    },
+    {
+      "id": 100,
+      "title": "Laba diena",
+      "body": "Laba diena su vistiena, kaip cia uzbaigti sita projekta..",
+      "author": "indre",
+      "email": "indre.vaitkeviciute96@gmail.com"
+    },
+    {
+      "id": 101,
+      "title": "",
+      "body": "",
+      "author": "",
+      "email": ""
     }
   ],
   "albums": [
@@ -1446,111 +1480,6 @@
       "name": "repellendus sapiente omnis praesentium aliquam ipsum id molestiae omnis",
       "email": "Georgianna@florence.io",
       "body": "dolor mollitia quidem facere et\nvel est ut\nut repudiandae est quidem dolorem sed atque\nrem quia aut adipisci sunt"
-    },
-    {
-      "postId": 8,
-      "id": 36,
-      "name": "sit et quis",
-      "email": "Raheem_Heaney@gretchen.biz",
-      "body": "aut vero est\ndolor non aut excepturi dignissimos illo nisi aut quas\naut magni quia nostrum provident magnam quas modi maxime\nvoluptatem et molestiae"
-    },
-    {
-      "postId": 8,
-      "id": 37,
-      "name": "beatae veniam nemo rerum voluptate quam aspernatur",
-      "email": "Jacky@victoria.net",
-      "body": "qui rem amet aut\ncumque maiores earum ut quia sit nam esse qui\niusto aspernatur quis voluptas\ndolorem distinctio ex temporibus rem"
-    },
-    {
-      "postId": 8,
-      "id": 38,
-      "name": "maiores dolores expedita",
-      "email": "Piper@linwood.us",
-      "body": "unde voluptatem qui dicta\nvel ad aut eos error consequatur voluptatem\nadipisci doloribus qui est sit aut\nvelit aut et ea ratione eveniet iure fuga"
-    },
-    {
-      "postId": 8,
-      "id": 39,
-      "name": "necessitatibus ratione aut ut delectus quae ut",
-      "email": "Gaylord@russell.net",
-      "body": "atque consequatur dolorem sunt\nadipisci autem et\nvoluptatibus et quae necessitatibus rerum eaque aperiam nostrum nemo\neligendi sed et beatae et inventore"
-    },
-    {
-      "postId": 8,
-      "id": 40,
-      "name": "non minima omnis deleniti pariatur facere quibusdam at",
-      "email": "Clare.Aufderhar@nicole.ca",
-      "body": "quod minus alias quos\nperferendis labore molestias quae ut ut corporis deserunt vitae\net quaerat ut et ullam unde asperiores\ncum voluptatem cumque"
-    },
-    {
-      "postId": 9,
-      "id": 41,
-      "name": "voluptas deleniti ut",
-      "email": "Lucio@gladys.tv",
-      "body": "facere repudiandae vitae ea aut sed quo ut et\nfacere nihil ut voluptates in\nsaepe cupiditate accusantium numquam dolores\ninventore sint mollitia provident"
-    },
-    {
-      "postId": 9,
-      "id": 42,
-      "name": "nam qui et",
-      "email": "Shemar@ewell.name",
-      "body": "aut culpa quaerat veritatis eos debitis\naut repellat eius explicabo et\nofficiis quo sint at magni ratione et iure\nincidunt quo sequi quia dolorum beatae qui"
-    },
-    {
-      "postId": 9,
-      "id": 43,
-      "name": "molestias sint est voluptatem modi",
-      "email": "Jackeline@eva.tv",
-      "body": "voluptatem ut possimus laborum quae ut commodi delectus\nin et consequatur\nin voluptas beatae molestiae\nest rerum laborum et et velit sint ipsum dolorem"
-    },
-    {
-      "postId": 9,
-      "id": 44,
-      "name": "hic molestiae et fuga ea maxime quod",
-      "email": "Marianna_Wilkinson@rupert.io",
-      "body": "qui sunt commodi\nsint vel optio vitae quis qui non distinctio\nid quasi modi dicta\neos nihil sit inventore est numquam officiis"
-    },
-    {
-      "postId": 9,
-      "id": 45,
-      "name": "autem illo facilis",
-      "email": "Marcia@name.biz",
-      "body": "ipsum odio harum voluptatem sunt cumque et dolores\nnihil laboriosam neque commodi qui est\nquos numquam voluptatum\ncorporis quo in vitae similique cumque tempore"
-    },
-    {
-      "postId": 10,
-      "id": 46,
-      "name": "dignissimos et deleniti voluptate et quod",
-      "email": "Jeremy.Harann@waino.me",
-      "body": "exercitationem et id quae cum omnis\nvoluptatibus accusantium et quidem\nut ipsam sint\ndoloremque illo ex atque necessitatibus sed"
-    },
-    {
-      "postId": 10,
-      "id": 47,
-      "name": "rerum commodi est non dolor nesciunt ut",
-      "email": "Pearlie.Kling@sandy.com",
-      "body": "occaecati laudantium ratione non cumque\nearum quod non enim soluta nisi velit similique voluptatibus\nesse laudantium consequatur voluptatem rem eaque voluptatem aut ut\net sit quam"
-    },
-    {
-      "postId": 10,
-      "id": 48,
-      "name": "consequatur animi dolorem saepe repellendus ut quo aut tenetur",
-      "email": "Manuela_Stehr@chelsie.tv",
-      "body": "illum et alias quidem magni voluptatum\nab soluta ea qui saepe corrupti hic et\ncum repellat esse\nest sint vel veritatis officia consequuntur cum"
-    },
-    {
-      "postId": 10,
-      "id": 49,
-      "name": "rerum placeat quae minus iusto eligendi",
-      "email": "Camryn.Weimann@doris.io",
-      "body": "id est iure occaecati quam similique enim\nab repudiandae non\nillum expedita quam excepturi soluta qui placeat\nperspiciatis optio maiores non doloremque aut iusto sapiente"
-    },
-    {
-      "postId": 10,
-      "id": 50,
-      "name": "dolorum soluta quidem ex quae occaecati dicta aut doloribus",
-      "email": "Kiana_Predovic@yasmin.io",
-      "body": "eum accusamus aut delectus\narchitecto blanditiis quia sunt\nrerum harum sit quos quia aspernatur vel corrupti inventore\nanimi dicta vel corporis"
     }
   ],
   "profile": {

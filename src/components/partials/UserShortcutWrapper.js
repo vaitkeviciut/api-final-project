@@ -28,7 +28,7 @@ const UserShortcutWrapper = ({ image, userId, name, username, companyName, postI
             </div>
         </div>
         <div className='post-button-wrapper'>
-            <button onClick={() => deletePostHandler(postId)}>Delete</button>
+            <button className='delete-button' onClick={() => deletePostHandler(postId)}>x</button>
         </div>
     </div>
   )

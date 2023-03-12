@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import PostContent from '../partials/PostContent'
@@ -9,7 +9,7 @@ import './UserPage.scss';
 import userImage from '../images/user-picture-small.jpg';
 
 const UserPage = () => {
-    const { userId } =useParams();
+    const { userId } = useParams();
     const [user, setUser] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [address, setAddress] = useState('');
@@ -40,7 +40,7 @@ const UserPage = () => {
       <PageWrapper>
         <div className='user-info-wrapper'>
           <div className='user-photo-wrapper'>
-            <img className='user-photo' src={userImage} width='250' />
+            <img className='user-photo' src={userImage} width='250' alt='user' />
           </div>
           <div className='user-text-wrapper'>
             <div className='name-wrapper'>
@@ -60,7 +60,7 @@ const UserPage = () => {
               </li>
             </ul>
             <div className='user-address-wrapper'>
-              <a className='adress-link' href={`https://www.google.com/maps/place/${map.lat}, ${map.lng}`} target='_blank' >{address.street} street - {address.suite}, {address.city}, {address.zipcode}</a>
+              <a className='adress-link' href={`https://www.google.com/maps/place/${map.lat}, ${map.lng}`} target='_blank' rel="noreferrer" >{address.street} street - {address.suite}, {address.city}, {address.zipcode}</a>
             </div>
           </div>
         </div>

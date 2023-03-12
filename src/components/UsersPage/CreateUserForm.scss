@@ -1,30 +1,35 @@
-#create-post-form {
+#create-user-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    .form-control {
+    .form-control-wrapper {
+        display: flex;
+        gap: 20px;
+        
+        .form-control {
         display: flex;
         flex-direction: column;
         gap: 7px;
+        width: 100%;
 
-        .create-post-section-title {
-            font-size: 18px;
-        }
-        .create-post-text {
-            border: none;
-            padding: 7px 15px;
-            font-size: 16px;
-            color: #4F4F4F;
-            font-family: 'Golos Text', sans-serif;
-            border-radius: 10px;
+            .create-user-section-title {
+                font-size: 18px;
+            }
+            .create-user-text {
+                border: none;
+                padding: 7px 15px;
+                font-size: 16px;
+                color: #4F4F4F;
+                font-family: 'Golos Text', sans-serif;
+                border-radius: 10px;
+            }
         }
     }
     .form-buttons-wrapper {
         display: flex;
         gap: 20px;
         justify-content: flex-end;
-        margin-bottom: 50px;
 
         .form-button-wrapper {
             .user-from-button {

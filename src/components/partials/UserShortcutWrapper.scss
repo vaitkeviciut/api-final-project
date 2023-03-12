@@ -1,31 +1,50 @@
-.user-shortcut-wrapper {
+.user-and-delete-button-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    .user-shortcut-wrapper {
     display: flex;
     gap: 20px;
 
-    .user-photo-small {
-        border-radius: 50%;
-    }
-    .user-shortcut-near-photo-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        .user-photo-small {
+            border-radius: 50%;
+        }
+        .user-shortcut-near-photo-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-        .user-name-link {
-            text-decoration: none;
-            color: #4F4F4F;
+            .user-name-link {
+                text-decoration: none;
+                color: #4F4F4F;
 
-            .user-name-username-wrapper {
-                display: flex;
-                gap: 10px;
-                align-items: center;
+                .user-name-username-wrapper {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
 
-                .user-name-post {
-                    margin: 0;
+                    .user-name-post {
+                        margin: 0;
+                    }
                 }
-            }
-            .user-company-wrapper {
-                font-size: 14px;
+                .user-company-wrapper {
+                    font-size: 14px;
+                }
             }
         }
     }
+    .post-button-wrapper {
+        .delete-button {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            color: rgb(48, 162, 255);
+        }
+    }
 }
+
