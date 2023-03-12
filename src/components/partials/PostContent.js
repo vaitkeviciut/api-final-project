@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom"
-import UserShortcutWrapper from '../partials/UserShortcutWrapper';
+// import UserShortcutWrapper from '../partials/UserShortcutWrapper';
 import './PostContent.scss'
 
-import userImage from '../images/user-picture-small.jpg';
+// import userImage from '../images/user-picture-small.jpg';
 
 const PostContent = ({ postId, title, body }) => {
 

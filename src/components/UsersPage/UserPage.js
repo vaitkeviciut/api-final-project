@@ -4,7 +4,6 @@ import PageWrapper from '../PageWrapper/PageWrapper'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import PostContent from '../partials/PostContent'
 import AlbumTitle from '../partials/AlbumTitle'
-import CreatePostForm from '../PostsPage/CreatePostForm'
 import EditUserForm from './EditUserForm'
 import './UserPage.scss';
 
@@ -20,7 +19,6 @@ const UserPage = () => {
     const [albums, setAlbums] = useState([]);
     const [userEdited, setUserEdited] = useState(false)
     const [errorMessages, setErrorMessages] = useState([])
-    const [postFormIsVisible, setPostFormIsVisible] = useState(false)
     const [editFormIsVisible, setEditFormIsVisible] = useState(false)
     const [formData, setFormData] = useState({})
 
