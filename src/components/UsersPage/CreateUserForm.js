@@ -32,7 +32,7 @@ const CreateUserForm = ({ onCreateNewUser, onformInput, formData, formSetUp }) =
         
         <div className='form-control-wrapper'>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Email:</label>  
+                <label className="create-user-section-title" htmlFor="email">Email:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
@@ -43,7 +43,7 @@ const CreateUserForm = ({ onCreateNewUser, onformInput, formData, formSetUp }) =
                 />
             </div>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Phone:</label>  
+                <label className="create-user-section-title" htmlFor="phone">Phone:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
@@ -57,54 +57,54 @@ const CreateUserForm = ({ onCreateNewUser, onformInput, formData, formSetUp }) =
 
         <div className='form-control-wrapper'>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Street:</label>  
+                <label className="create-user-section-title" htmlFor="street">Street:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
                 name="street" 
                 id="street"
-                value={formData.street}
-                onChange={onformInput}
+                value={formData.address.street}
+                onChange={(event) => onformInput( event, 'address')}
                 />
             </div>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Suite:</label>  
+                <label className="create-user-section-title" htmlFor="suite">Suite:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
                 name="suite" 
                 id="suite"
-                value={formData.suite}
-                onChange={onformInput}
+                value={formData.address.suite}
+                onChange={(event) => onformInput( event, 'address')}
                 />
             </div>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">City:</label>  
+                <label className="create-user-section-title" htmlFor="city">City:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
                 name="city" 
                 id="city"
-                value={formData.city}
-                onChange={onformInput}
+                value={formData.address.city}
+                onChange={(event) => onformInput( event, 'address')}
                 />
             </div>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Zipcode:</label>  
+                <label className="create-user-section-title" htmlFor="zipcode">Zipcode:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
                 name="zipcode" 
                 id="zipcode"
-                value={formData.zipcode}
-                onChange={onformInput}
+                value={formData.address.zipcode}
+                onChange={(event) => onformInput( event, 'address')}
                 />
             </div>
         </div>
 
         <div className='form-control-wrapper'>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Website:</label>  
+                <label className="create-user-section-title" htmlFor="website">Website:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
@@ -115,14 +115,14 @@ const CreateUserForm = ({ onCreateNewUser, onformInput, formData, formSetUp }) =
                 />
             </div>
             <div className="form-control">
-                <label className="create-user-section-title" htmlFor="user">Company name:</label>  
+                <label className="create-user-section-title" htmlFor="company">Company name:</label>  
                 <input 
                 className="create-user-text" 
                 type="text"  
-                name="companyName" 
-                id="companyName"
-                value={formData.companyName}
-                onChange={onformInput}
+                name="company" 
+                id="cpmpany"
+                value={formData.company.name}
+                onChange={(event) => onformInput( event, 'company')}
                 />
             </div>
         </div>

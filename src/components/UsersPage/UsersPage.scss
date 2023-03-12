@@ -1,6 +1,12 @@
 #page-content {
 
     .button-new-user-wrapper {
+        .required-fiels-messages-wrapper {
+            .required-fields {
+                color: red;
+                font-weight: 600;
+            }
+        }
         .post-create-link {
             text-decoration: none;
             color: #4F4F4F;

@@ -55,31 +55,29 @@ useEffect(() => {
 
 
   return (
-    <div>
-      <PageWrapper>
-        <div className='button-new-post-wrapper'>
+    <PageWrapper>
+      <div className='button-new-post-wrapper'>
 
-          {formIsVisible ? (
+        {formIsVisible ? (
 
-          <CreatePostForm onCreateNewPost={createNewPostHendler} onFormInput={formInputHandler} formData={formData} formSetUp={setFormIsVisible} />
-          ):(
-            <button onClick={() => setFormIsVisible(true)} className='post-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create Post</span></button>
-          )}
-        </div>
-     
-            <div className="one-posts-all-wrapper" >
-            {posts && posts.length > 0 && posts.map((post, index) => (
-                <PostContent 
-                  key={index}
-                  title={post.title}
-                  body={post.body}
-                  postId={post.id}
-                />
-              ))}
-            </div>
-        
-      </PageWrapper>
-    </div>
+        <CreatePostForm onCreateNewPost={createNewPostHendler} onFormInput={formInputHandler} formData={formData} formSetUp={setFormIsVisible} />
+        ):(
+          <button onClick={() => setFormIsVisible(true)} className='post-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create Post</span></button>
+        )}
+      </div>
+    
+          <div className="one-posts-all-wrapper" >
+          {posts && posts.length > 0 && posts.map((post, index) => (
+              <PostContent 
+                key={index}
+                title={post.title}
+                body={post.body}
+                postId={post.id}
+              />
+            ))}
+          </div>
+      
+    </PageWrapper>
   )
 }
 

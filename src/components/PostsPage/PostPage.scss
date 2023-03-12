@@ -1,0 +1,137 @@
+
+.post-and-comments-wrapper {
+    background-color: white;
+    padding: 50px 100px 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+    .post-content-wrapper {
+        .post-header-wrapper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding-bottom: 20px;
+
+            .user-shortcut-wrapper {
+                display: flex;
+                gap: 20px;
+
+                .user-photo-small {
+                    border-radius: 50%;
+                }
+                .user-shortcut-near-photo-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .user-name-link {
+                        text-decoration: none;
+                        color: #4F4F4F;
+
+                        .user-name-username-wrapper {
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+
+                            .user-name-post {
+                                margin: 0;
+                            }
+                        }
+                        .user-company-wrapper {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            .user-shortcut-wrapper:hover {
+                .user-name-post {
+                    color: rgb(48, 162, 255);
+                }
+                .username-text-post {
+                    color: rgb(48, 162, 255)
+                }
+            }
+            .user-edit-button-wrapper {
+                .edit-button{
+                    background-color: rgba(255, 255, 255, 0);
+                    border: none;
+                    font-size: 15px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    margin-right: 7px;
+                    
+                }
+                .edit-button:hover {
+                    color: rgb(48, 162, 255);
+                }
+            }
+        }
+        .post-link-wrapper {
+            padding: 20px 0 40px;
+            border-bottom: 1px solid rgb(204, 204, 204);
+            border-top: 1px solid rgb(204, 204, 204);
+
+            .post-title {
+                font-size: 20px;
+                font-weight: 700;
+                margin-top: 5px;
+            }
+            .post-body {
+                font-size: 15px;
+                color: #959595;
+            }
+        }
+    }
+    .comments-content-wrapper {
+        margin-top: 40px;
+        
+        .comments-title {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .comments-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .one-comment-wrapper {
+                background-color: #f0f0f0;
+                padding: 30px 70px;
+                margin: 0 50px;
+                border-radius: 15px;
+
+                .one-comment-header-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .comment-email {
+                        font-weight: 700;
+                    }
+                    .user-delete-button-wrapper {
+                        .delete-button {
+                            padding: 0;
+                            border: none;
+                            background-color: none;
+                            text-transform: uppercase;
+                            color: #4F4F4F;
+                            font-size: 14px;
+                            cursor: pointer
+                        }
+                        .delete-button:hover {
+                            color: rgb(48, 162, 255);
+                        }
+                    }
+                }
+                .comments-content-wrapper {
+                    .comment-name {
+                        font-size: 15px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
