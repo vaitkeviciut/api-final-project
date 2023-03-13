@@ -5,6 +5,8 @@ import PostContent from '../partials/PostContent'
 import './PostsPage.scss'
 import './CreatePostForm.scss'
 
+import userImage from '../images/user-picture-small.jpg';
+
 
 
 const PostsPage = () => {
@@ -18,8 +20,6 @@ const PostsPage = () => {
   const formDefaults = {
     title: '',
     body: '',
-    userId: '',
-    email: '',
 }
 
 const [formData, setFormData] = useState(formDefaults)
@@ -33,9 +33,6 @@ const validateForm = () => {
   }
   if (!formData.body) {
       messages.push('Post is required')
-  }
-  if (!formData.email) {
-    messages.push('Email is required')
   }
 
   if (messages.length === 0) {
@@ -91,19 +88,6 @@ useEffect(() => {
         setPostCreated(true)
       }
 
-      const userNameInputHandler = (event, property) => {
-        setFormData(prevState => {
-            const updatedData  = {...prevState}
-  
-            if (!property) {
-              updatedData[event.target.name] = event.target.value
-              } else {
-              updatedData[property][event.target.name] = event.target.value
-              }
-              return updatedData 
-        });
-    };
-
 
   return (
     <PageWrapper>
@@ -133,23 +117,6 @@ useEffect(() => {
               value={formData.body} 
               onChange={formInputHandler} >
               </textarea>
-          </div>
-          <div className="form-control">
-              <label className="create-post-section-title" htmlFor="userId">Post Author:</label>  
-              <select className="create-post-text" name="userId"  id="user" value={formData.userId} onChange={userNameInputHandler}>
-                ({posts && posts.length > 0 && posts.map((post, index) => <option key={index}>{post.userId}</option>)})
-              </select>
-          </div>
-          <div className="form-control">
-              <label className="create-post-section-title" htmlFor="user">Email address:</label>  
-              <input 
-              className="create-post-text" 
-              type="text"  
-              name="email" 
-              id="user"
-              value={formData.email}
-              onChange={formInputHandler}
-              />
           </div>
 
           <div className='form-buttons-wrapper'>
@@ -182,6 +149,14 @@ useEffect(() => {
                 title={post.title}
                 body={post.body}
                 postId={post.id}
+                name={post.name} 
+                username={post.username} 
+                company={post.company}
+                image={userImage}
+                userLink={userId}
+                date={post.date}
+                time={post.time}
+                userId={post.userId}
               />
             ))}
           </div>

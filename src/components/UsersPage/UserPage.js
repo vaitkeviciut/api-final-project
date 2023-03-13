@@ -17,19 +17,21 @@ const UserPage = () => {
     const [map, setMap] = useState('');
     const [posts, setPosts] = useState([]);
     const [albums, setAlbums] = useState([]);
+    const [email, setEmail] = useState('');
     const [userEdited, setUserEdited] = useState(false)
     const [errorMessages, setErrorMessages] = useState([])
     const [editFormIsVisible, setEditFormIsVisible] = useState(false)
-    
+
     const [formData, setFormData] = useState({})
 
     useEffect(() => {
         fetch(`http://localhost:3000/users/${userId}?_embed=posts&_embed=albums`)
             .then(res => res.json())
             .then(userData => {
-                console.log(userData)
+                console.log(userData.email)
 
                 setUser(userData)
+                setEmail(userData.email)
                 setCompanyName(userData.company)
                 setAddress(userData.address)
                 setMap(userData.address.geo)
@@ -284,7 +286,7 @@ const UserPage = () => {
                     <a href={`tel:${user.phone}`} className='user-list-link'>{user.phone}</a>
                 </li>
                 <li className='user-list-item'>
-                    <a href={`mailto:${user.email}`} className='user-list-link'>{user.email}</a>
+                    <a href={`mailto:${email}`} className='user-list-link'>{email}</a>
                 </li>
             </ul>
             <div className='user-address-wrapper'>
@@ -300,19 +302,17 @@ const UserPage = () => {
         {posts && posts.length > 0 && posts.map((post, index) => (
         <div key={index} className='user-post-wrapper-link'>
 
-          <UserShortcutWrapper
-            image={userImage}
-            userId={post.userId}
-            name={user.name}
-            username={user.username}
-            companyName={user.company.name}
-            postId={post.id}
-          />
-
           <PostContent 
             title={post.title}
             body={post.body}
             postId={post.id}
+            name={post.name} 
+            username={post.username} 
+            company={post.company}
+            image={userImage}
+            userLink={userId}
+            date={post.date}
+            time={post.time}
           />
 
         </div>
@@ -330,6 +330,11 @@ const UserPage = () => {
               key={index}
               title={album.title}
               albumId={album.id}
+              name={album.name}
+              username={album.username}
+              email={album.email}
+              date={album.date}
+              time={album.time}
             />
           ))}
 

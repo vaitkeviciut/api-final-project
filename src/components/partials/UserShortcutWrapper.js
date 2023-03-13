@@ -16,7 +16,7 @@ const UserShortcutWrapper = ({ image, userId, name, username, companyName, postI
         <div className="user-shortcut-wrapper">
             <img className="user-photo-small" src={image} alt={image} width='60' />
             <div className="user-shortcut-near-photo-wrapper">
-                <Link className="user-name-link" to={`apipage/users/` + userId}>
+                <Link className="user-name-link" to={`/users/` + userId}>
                     <div className="user-name-username-wrapper">
                         <h3 className="user-name-post">{name}</h3>
                         <span className="username-text-post">({username})</span>

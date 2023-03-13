@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper';
 import './PostPage.scss'
-import './CreatePostForm.scss'
+import './EditPostForm.scss'
 
 import userImage from '../images/user-picture-small.jpg'
 
@@ -27,8 +27,9 @@ const PostPage = () => {
             setUser(post.user)
             setCompanyName(post.user.company.name)
             setComments(post.comments)
+            setFormData(post)
         })
-  }, [postId])
+  }, [])
 
   const validateForm = () => {
     let messages = []
@@ -38,9 +39,6 @@ const PostPage = () => {
     }
     if (!formData.body) {
         messages.push('Post is required')
-    }
-    if (!formData.email) {
-      messages.push('Email is required')
     }
   
     if (messages.length === 0) {
@@ -103,10 +101,10 @@ const PostPage = () => {
   return (
     <PageWrapper>
 
-      <div className='button-new-post-wrapper'>
+      <div className='button-edit-post-wrapper'>
 
           {editFormIsVisible ? (
-            <form id="create-post-form" onSubmit={editPostHandler}>
+            <form id="edit-post-form" onSubmit={editPostHandler}>
             <div className="form-control">
                 <label className="create-post-section-title" htmlFor="title">Post title:</label>
                 <input 
@@ -130,29 +128,13 @@ const PostPage = () => {
                 onChange={postFormInputHandler} >
                 </textarea>
             </div>
-            <div className="form-control">
-                <label className="create-post-section-title" htmlFor="userId">Post Author:</label>  
-                <select className="create-post-text" name="userId"  id="user" value={formData.userId}>
-                </select>
-            </div>
-            <div className="form-control">
-                <label className="create-post-section-title" htmlFor="user">Email address:</label>  
-                <input 
-                className="create-post-text" 
-                type="text"  
-                name="email" 
-                id="user"
-                value={formData.email}
-                onChange={postFormInputHandler}
-                />
-            </div>
   
             <div className='form-buttons-wrapper'>
               <div className='form-button-wrapper'>
                   <button className="user-from-button" onClick={() => setEditFormIsVisible(false)} >Discard</button>
               </div>
               <div className="form-button-wrapper">
-                  <input className="user-from-button" id="submit" type="submit" value="Create Post" />
+                  <input className="user-from-button" id="submit" type="submit" value="Edit Post" />
               </div>
             </div>
             <div className='success-created-post'>

@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage'
 import UsersPage from '../UsersPage/UsersPage'
 import PostsPage from '../PostsPage/PostsPage';
 import AlbumsPage from '../AlbumsPage/AlbumsPage';
+import MoviesPage from '../MoviesPage/MoviesPage'
 
 
 const Header = () => {
@@ -29,6 +30,9 @@ const Header = () => {
         </li>
         <li className='nav-list-item'>
           <NavLink className='nav-list-item-link' to='/albums' element={<AlbumsPage />} >Albums</NavLink>
+        </li>
+        <li className='nav-list-item'>
+          <NavLink className='nav-list-item-link' to='/movies' element={<MoviesPage />} >Movies</NavLink>
         </li>
       </ul>
     </div>
