@@ -1,7 +1,21 @@
 
-.button-edit-post-wrapper {
+.user-edit-button-wrapper {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+
+    .success-edited {
+        .success-created {
+            margin: 0;
+            color: rgb(48, 162, 255);
+        }
+        .required-fiels-messages-wrapper {
+            .required-fields {
+                color: red;
+                font-weight: 600;
+            }
+        }
+    }
 
     .edit-button{
         background-color: rgba(255, 255, 255, 0);
