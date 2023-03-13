@@ -1,6 +1,42 @@
 .post-text-wrapper {
     display: flex;
+    flex-direction: column;
     gap: 10px;
+
+    .user-shortcut-wrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        .photo-wrapper {
+            .user-photo-small {
+                border-radius: 50%;
+            }
+        }
+        .user-shortcut-near-photo-wrapper {
+            .user-link {
+                text-decoration: none;
+                color: #4F4F4F;
+                display: flex;
+                flex-direction: column;
+                gap: 3px;
+
+                .user-name-username-wrapper {
+                    display: flex;
+                    gap: 7px;
+                    align-items: center;
+
+                    .user-name-post {
+                        margin: 0;
+                    }
+                }
+            }
+            .user-link:hover {
+                color: rgb(48, 162, 255);
+
+            }
+        }
+    }
 
     .posts-list-item-link-wrapper {
         .posts-list-item-link {
@@ -22,10 +58,14 @@
                 color: rgb(48, 162, 255);
             }
         }
-    }
-    .user-delete-button-wrapper {
-        display: flex;
-        align-items: flex-start;
+        .date-wrapper {
+            display: flex;
+            gap: 30px;
+            justify-content: flex-start;
+            color: #9c9c9c;
+            font-size: 14px;
+            margin-top: 30px;
+        }
     }
     
 }

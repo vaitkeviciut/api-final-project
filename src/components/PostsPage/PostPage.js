@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper';
-import './PostPage.scss'
-import './EditPostForm.scss'
 
 import userImage from '../images/user-picture-small.jpg'
+
+import './PostPage.scss'
+import '../UsersPage/CreateUserForm.scss'
+
 
 const PostPage = () => {
   const { postId } = useParams();
@@ -62,12 +64,6 @@ const PostPage = () => {
     });
   };
 
-  const deletePostHandler = (postId) => {
-    fetch(`http://localhost:3000/posts/${postId}`, {
-        method: 'DELETE',
-    });
-  }
-
   const deleteCommentHandler = (id) => {
     fetch(`http://localhost:3000/comments/${id}`, {
         method: 'DELETE',
@@ -101,10 +97,10 @@ const PostPage = () => {
   return (
     <PageWrapper>
 
-      <div className='button-edit-post-wrapper'>
+      <div className='user-edit-button-wrapper'>
 
           {editFormIsVisible ? (
-            <form id="edit-post-form" onSubmit={editPostHandler}>
+            <form id="create-post-form" onSubmit={editPostHandler}>
             <div className="form-control">
                 <label className="create-post-section-title" htmlFor="title">Post title:</label>
                 <input 
@@ -131,10 +127,10 @@ const PostPage = () => {
   
             <div className='form-buttons-wrapper'>
               <div className='form-button-wrapper'>
-                  <button className="user-from-button" onClick={() => setEditFormIsVisible(false)} >Discard</button>
+                  <button className="post-from-button" onClick={() => setEditFormIsVisible(false)} >Discard</button>
               </div>
               <div className="form-button-wrapper">
-                  <input className="user-from-button" id="submit" type="submit" value="Edit Post" />
+                  <input className="post-from-button" id="submit" type="submit" value="Edit Post" />
               </div>
             </div>
             <div className='success-created-post'>
@@ -151,10 +147,6 @@ const PostPage = () => {
               <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
           )}
 
-      </div>
-
-      <div className='delete-user-wrapper'>
-        <button className='delete-button' onClick={() => deletePostHandler(postId)}>Delete Post</button>
       </div>
 
       <div className='post-and-comments-wrapper'>

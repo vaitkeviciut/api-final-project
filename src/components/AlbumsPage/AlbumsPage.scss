@@ -1,0 +1,29 @@
+.button-new-user-wrapper {
+    .user-create-link:hover {
+        .plus-symbol {
+            background-color: rgb(48, 162, 255);
+        }
+        .plus-text {
+            color: rgb(48, 162, 255);
+        }
+    }
+}
+
+.one-album-all-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .album-item {
+        width: 270px;
+        padding: 20px 25px 30px;
+        background-color: white;
+        border-radius: 20px;
+
+        .delete-button-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 60px;
+        }
+    }
+}

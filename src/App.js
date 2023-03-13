@@ -6,9 +6,9 @@ import UserPage from './components/UsersPage/UserPage'
 import PostsPage from './components/PostsPage/PostsPage'
 import PostPage from './components/PostsPage/PostPage'
 import AlbumsPage from './components/AlbumsPage/AlbumsPage'
-import AlbumPage from './components/AlbumsPage/AlbumPage'
+// import AlbumPage from './components/AlbumsPage/AlbumPage'
 import MoviesPage from './components/MoviesPage/MoviesPage'
-import MoviePage from './components/MoviesPage/MoviePage'
+// import MoviePage from './components/MoviesPage/MoviePage'
 
 import './App.css';
 
@@ -26,10 +26,10 @@ function App() {
         <Route path='/posts/:postId' element={<PostPage />} />
 
         <Route path='/albums' element={<AlbumsPage />} />
-        <Route path='/albums/:albumId' element={<AlbumPage />} />
+        {/* <Route path='/albums/:albumId' element={<AlbumPage />} /> */}
 
         <Route path='/movies' element={<MoviesPage />} />
-        <Route path='/movies/:movieId' element={<MoviePage />} />
+        {/* <Route path='/movies/:movieId' element={<MoviePage />} /> */}
 
         <Route path='*' element={
           <div>

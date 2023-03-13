@@ -8,10 +8,10 @@
         gap: 20px;
         
         .form-control {
-        display: flex;
-        flex-direction: column;
-        gap: 7px;
-        width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            width: 100%;
 
             .create-user-section-title {
                 font-size: 18px;
@@ -46,5 +46,11 @@
                 background-color: rgb(48, 162, 255);
             }
         }
-    } 
+    }
+    .success-created-user {
+        .success-created {
+            color: rgb(48, 162, 255);
+            margin-top: 0;
+        }
+    }
 }

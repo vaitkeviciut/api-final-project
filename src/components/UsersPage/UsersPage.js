@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PageWrapper from '../PageWrapper/PageWrapper';
 import UserItem from './UserItem';
+import DeleteButton from '../partials/DeleteButton'
 import './UsersPage.scss';
+import './CreateUserForm.scss';
 
 const UsersPage = () => {
   const [users, setUsers] = useState([]);
@@ -62,18 +64,18 @@ const validateForm = () => {
   }, [])
 
 
-  const formInputHandler = (event, property) => {
-    setFormData(prevState => {
-        const updatedData  = {...prevState}
+    const formInputHandler = (event, property) => {
+        setFormData(prevState => {
+            const updatedData  = {...prevState}
 
-        if (!property) {
-        updatedData[event.target.name] = event.target.value
-        } else {
-        updatedData[property][event.target.name] = event.target.value
-        }
-        return updatedData 
-    });
-};
+            if (!property) {
+            updatedData[event.target.name] = event.target.value
+            } else {
+            updatedData[property][event.target.name] = event.target.value
+            }
+            return updatedData 
+        });
+    };
 
 
   const createNewUserHendler = (event) => {
@@ -255,13 +257,15 @@ const validateForm = () => {
 
       <ul className='users-list'>
           {users && users.length > 0 && users.map((user, index) => (
-
-            <UserItem 
-            key={index}
-            name={user.name}
-            postsLength={user.posts.length}
-            userId={user.id}
-            />
+            <li className='users-list-item'>
+                <UserItem 
+                key={index}
+                name={user.name}
+                postsLength={user.posts.length}
+                userId={user.id}
+                />
+                <DeleteButton id={user.id} location='users' />
+            </li>
           ))}
       </ul>
     </PageWrapper>

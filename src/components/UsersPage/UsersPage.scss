@@ -39,11 +39,22 @@
 }
 
 .users-list {
-list-style-type: none;
-padding-left: 0;
-display: flex;
-flex-direction: column;
-gap: 20px;
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .users-list-item {
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgb(215, 215, 215);
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 17px;
+
+}
 }
 
 

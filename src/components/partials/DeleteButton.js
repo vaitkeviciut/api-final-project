@@ -2,18 +2,18 @@ import React from 'react'
 
 import './DeleteButton.scss'
 
-const DeleteButton = ({ userId }) => {
+const DeleteButton = ({ location, id }) => {
 
-    const deleteUserHandler = (userId) => {
-        fetch(`http://localhost:3000/users/${userId}`, {
+    const deleteHandler = (id) => {
+        fetch(`http://localhost:3000/${location}/${id}`, {
             method: 'DELETE',
         });
     }
 
   return (
-    <div className='user-delete-button-wrapper'>
-        <button className='delete-button' onClick={() => deleteUserHandler(userId)}>x</button>
-    </div>
+    
+        <button className='delete-button' onClick={() => deleteHandler(id)}>x</button>
+    
   )
 }
 

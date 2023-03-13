@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper'
 import PostContent from '../partials/PostContent'
+import DeleteButton from '../partials/DeleteButton'
 import './PostsPage.scss'
 import './CreatePostForm.scss'
 
@@ -20,6 +21,12 @@ const PostsPage = () => {
   const formDefaults = {
     title: '',
     body: '',
+    name: '',
+    username: '',
+    email: '',
+    company: '',
+    date: '2023-03-14',
+    time: '14:05'
 }
 
 const [formData, setFormData] = useState(formDefaults)
@@ -33,6 +40,18 @@ const validateForm = () => {
   }
   if (!formData.body) {
       messages.push('Post is required')
+  }
+  if (!formData.name) {
+    messages.push('Name is required')
+  }
+  if (!formData.username) {
+    messages.push('Username is required')
+  }
+  if (!formData.email) {
+    messages.push('Email is required')
+  }
+  if (!formData.company) {
+    messages.push('Company is required')
   }
 
   if (messages.length === 0) {
@@ -91,7 +110,7 @@ useEffect(() => {
 
   return (
     <PageWrapper>
-      <div className='button-new-post-wrapper'>
+      <div className='button-new-user-wrapper'>
 
         {formIsVisible ? (
         <form id="create-post-form" onSubmit={createNewPostHendler}>
@@ -117,6 +136,77 @@ useEffect(() => {
               value={formData.body} 
               onChange={formInputHandler} >
               </textarea>
+          </div>
+          <div className='form-control-row'>
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="name">Post author name:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="name" 
+                id="name" 
+                value={formData.name}
+                onChange={formInputHandler}
+                />
+            </div>
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="username">Post author username:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="username" 
+                id="username" 
+                value={formData.username}
+                onChange={formInputHandler}
+                />
+            </div>
+          </div>
+          <div className='form-control-row'>
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="email">Post author email:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="email" 
+                id="email" 
+                value={formData.email}
+                onChange={formInputHandler}
+                />
+            </div>
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="company">Post author company:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="company" 
+                id="company" 
+                value={formData.company}
+                onChange={formInputHandler}
+                />
+            </div>
+
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="date">Date:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="date" 
+                id="date" 
+                value={formData.date}
+                onChange={formInputHandler}
+                />
+            </div>
+            <div className="form-control">
+                <label className="create-post-section-title" htmlFor="time">Time:</label>
+                <input 
+                className="create-post-text" 
+                type="text" 
+                name="time" 
+                id="time" 
+                value={formData.time}
+                onChange={formInputHandler}
+                />
+            </div>
           </div>
 
           <div className='form-buttons-wrapper'>
@@ -144,6 +234,7 @@ useEffect(() => {
     
           <div className="one-posts-all-wrapper" >
           {posts && posts.length > 0 && posts.map((post, index) => (
+            <div className="one-post-wrapper">
               <PostContent 
                 key={index}
                 title={post.title}
@@ -158,6 +249,8 @@ useEffect(() => {
                 time={post.time}
                 userId={post.userId}
               />
+              <DeleteButton id={post.id} location='posts' />
+              </div>
             ))}
           </div>
       

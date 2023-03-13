@@ -39,9 +39,9 @@
 
     .one-post-wrapper {
         background-color: white;
-        padding: 50px 100px 40px;
+        padding: 50px 80px 40px 100px;
         border-radius: 15px;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
     }
 }

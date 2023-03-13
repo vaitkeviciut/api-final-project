@@ -21,7 +21,235 @@
         "name": "Romaguera-Crona",
         "catchPhrase": "Multi-layered client-server neural-net",
         "bs": "harness real-time e-markets"
-      }
+      },
+      "posts": [
+        {
+          "userId": 1,
+          "id": 1,
+          "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+          "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        },
+        {
+          "userId": 1,
+          "id": 2,
+          "title": "qui est esse",
+          "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        },
+        {
+          "userId": 1,
+          "id": 4,
+          "title": "eum et est occaecati",
+          "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        },
+        {
+          "userId": 1,
+          "id": 5,
+          "title": "nesciunt quas odio",
+          "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        },
+        {
+          "userId": 1,
+          "id": 6,
+          "title": "dolorem eum magni eos aperiam quia",
+          "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        },
+        {
+          "userId": 1,
+          "id": 7,
+          "title": "magnam facilis autem",
+          "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz",
+          "company": "Romaguera-Crona",
+          "date": "2023-03-13",
+          "time": "15:45"
+        }
+      ],
+      "albums": [
+        {
+          "userId": 1,
+          "id": 1,
+          "title": "quam nostrum impedit mollitia quod et dolor",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 2,
+          "title": "consequatur autem doloribus natus consectetur",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 3,
+          "title": "ab rerum non rerum consequatur ut ea unde",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 4,
+          "title": "ducimus molestias eos animi atque nihil",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 5,
+          "title": "ut pariatur rerum ipsum natus repellendus praesentium",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 6,
+          "title": "voluptatem aut maxime inventore autem magnam atque repellat",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        },
+        {
+          "userId": 1,
+          "id": 7,
+          "title": "aut minima voluptatem ut velit",
+          "date": "2023-03-10",
+          "time": "11:45",
+          "name": "Leanne Graham",
+          "username": "Bret",
+          "email": "Sincere@april.biz"
+        }
+      ],
+      "movies": [
+        {
+          "id": 1,
+          "userId": 1,
+          "title": "The Shawshank Redemption",
+          "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+          "author": "Frank Darabont",
+          "year": "1994"
+        },
+        {
+          "id": 2,
+          "userId": 1,
+          "title": "The Godfather",
+          "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+          "author": "Francis Ford Coppola",
+          "year": "1972"
+        },
+        {
+          "id": 3,
+          "userId": 1,
+          "title": "The Dark Knight",
+          "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+          "author": "Christopher Nolan",
+          "year": "2008"
+        },
+        {
+          "id": 4,
+          "userId": 1,
+          "title": "Schindler's List",
+          "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+          "author": "Steven Spielberg",
+          "year": "1993"
+        },
+        {
+          "id": 5,
+          "userId": 1,
+          "title": "The Lord of the Rings: The Return of the King",
+          "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+          "author": "Peter Jackson",
+          "year": "2003"
+        },
+        {
+          "id": 6,
+          "userId": 1,
+          "title": "Pulp Fiction",
+          "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+          "author": "Quentin Tarantino",
+          "year": "1994"
+        },
+        {
+          "id": 7,
+          "userId": 1,
+          "title": "Forrest Gump",
+          "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+          "author": "Robert Zemeckis",
+          "year": "1994"
+        },
+        {
+          "id": 8,
+          "userId": 1,
+          "title": "The Silence of the Lambs",
+          "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
+          "author": "Jonathan Demme",
+          "year": "1991"
+        },
+        {
+          "id": 9,
+          "userId": 1,
+          "title": "Fight Club",
+          "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+          "author": "David Fincher",
+          "year": "1999"
+        },
+        {
+          "id": 10,
+          "userId": 1,
+          "title": "Parasite",
+          "description": "A poor family schemes to become employed by a wealthy family, but their plan goes awry when unexpected events occur.",
+          "author": "Bong Joon-ho",
+          "year": "2019"
+        }
+      ]
     },
     {
       "id": 2,
@@ -232,7 +460,7 @@
     },
     {
       "name": "Indre Vaitkeviciute",
-      "username": "sca",
+      "username": "spineris",
       "email": "indre.vaitkeviciute96@gmail.com",
       "phone": "+37063409771",
       "address": {
@@ -241,9 +469,9 @@
         "city": "Vilnius",
         "zipcode": "05116"
       },
-      "website": "lalalala",
+      "website": "nn",
       "company": {
-        "name": "WM colors"
+        "name": "Mika"
       },
       "id": 11
     }
@@ -1184,20 +1412,6 @@
       "company": "Romaguera-Crona",
       "date": "2023-03-13",
       "time": "15:45"
-    },
-    {
-      "title": "fssgsg",
-      "body": "sdfdf",
-      "userId": "1",
-      "email": "assff",
-      "id": 99
-    },
-    {
-      "title": "sdvv",
-      "body": "sdsdvsdvv",
-      "userId": "",
-      "email": "",
-      "id": 100
     }
   ],
   "albums": [
@@ -2080,6 +2294,15 @@
       "name": "Clementina DuBuque",
       "username": "Moriah.Stanton",
       "email": "Rey.Padberg@karina.biz"
+    },
+    {
+      "title": "vvv",
+      "name": "vvv",
+      "username": "vv",
+      "email": "vv",
+      "date": "vv",
+      "time": "vv",
+      "id": 101
     }
   ],
   "comments": [
@@ -5572,51 +5795,6 @@
       "name": "et eum provident maxime beatae minus et doloremque perspiciatis",
       "email": "Donnie@alfreda.biz",
       "body": "minus nihil sunt dolor\nipsum a illum quis\nquasi officiis cupiditate architecto sit consequatur ut\net sed quasi quam doloremque",
-      "date": "2023-03-13",
-      "time": "15:40"
-    },
-    {
-      "postId": 99,
-      "id": 491,
-      "name": "eos enim odio",
-      "email": "Maxwell@adeline.me",
-      "body": "natus commodi debitis cum ex rerum alias quis\nmaxime fugiat fugit sapiente distinctio nostrum tempora\npossimus quod vero itaque enim accusantium perferendis\nfugit ut eum labore accusantium voluptas",
-      "date": "2023-03-13",
-      "time": "15:40"
-    },
-    {
-      "postId": 99,
-      "id": 492,
-      "name": "consequatur alias ab fuga tenetur maiores modi",
-      "email": "Amina@emmet.org",
-      "body": "iure deleniti aut consequatur necessitatibus\nid atque voluptas mollitia\nvoluptates doloremque dolorem\nrepudiandae hic enim laboriosam consequatur velit minus",
-      "date": "2023-03-13",
-      "time": "15:40"
-    },
-    {
-      "postId": 99,
-      "id": 493,
-      "name": "ut praesentium sit eos rerum tempora",
-      "email": "Gilda@jacques.org",
-      "body": "est eos doloremque autem\nsimilique sint fuga atque voluptate est\nminus tempore quia asperiores aliquam et corporis voluptatem\nconsequatur et eum illo aut qui molestiae et amet",
-      "date": "2023-03-13",
-      "time": "15:40"
-    },
-    {
-      "postId": 99,
-      "id": 494,
-      "name": "molestias facere soluta mollitia totam dolorem commodi itaque",
-      "email": "Kadin@walter.io",
-      "body": "est illum quia alias ipsam minus\nut quod vero aut magni harum quis\nab minima voluptates nemo non sint quis\ndistinctio officia ea et maxime",
-      "date": "2023-03-13",
-      "time": "15:40"
-    },
-    {
-      "postId": 99,
-      "id": 495,
-      "name": "dolor ut ut aut molestiae esse et tempora numquam",
-      "email": "Alice_Considine@daren.com",
-      "body": "pariatur occaecati ea autem at quis et dolorem similique\npariatur ipsa hic et saepe itaque cumque repellendus vel\net quibusdam qui aut nemo et illo\nqui non quod officiis aspernatur qui optio",
       "date": "2023-03-13",
       "time": "15:40"
     }

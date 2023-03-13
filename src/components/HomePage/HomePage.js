@@ -51,7 +51,6 @@ const HomePage = () => {
     <PageWrapper>
       <div className='all-sections-wrapper'>
 
-
           <div className='all-posts-wrapper'>
             <div className='section-title-wrapper'>
               <Link to={`/posts`}>
@@ -133,7 +132,6 @@ const HomePage = () => {
                     description={movie.description}
                     author={movie.author}
                     year={movie.year}
-                    userId={movie.userId}
                   />
               </div>
             ))}

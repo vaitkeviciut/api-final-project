@@ -1,113 +1,114 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper'
-import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import PostContent from '../partials/PostContent'
 import AlbumTitle from '../partials/AlbumTitle'
-import './UserPage.scss';
-import './CreateUserForm.scss'
+import DeleteButton from '../partials/DeleteButton'
+import MovieContent from '../partials/MovieContent'
 
 import userImage from '../images/user-picture-small.jpg';
 
+import './UserPage.scss';
+import './CreateUserForm.scss'
+
+
 const UserPage = () => {
-    const { userId } = useParams();
-    const [user, setUser] = useState('');
-    const [companyName, setCompanyName] = useState('');
-    const [address, setAddress] = useState('');
-    const [map, setMap] = useState('');
-    const [posts, setPosts] = useState([]);
-    const [albums, setAlbums] = useState([]);
-    const [email, setEmail] = useState('');
-    const [userEdited, setUserEdited] = useState(false)
-    const [errorMessages, setErrorMessages] = useState([])
-    const [editFormIsVisible, setEditFormIsVisible] = useState(false)
+  const { userId } = useParams();
+  const [user, setUser] = useState('');
+  const [movies, setMovies] = useState('')
+  const [companyName, setCompanyName] = useState('');
+  const [address, setAddress] = useState('');
+  const [map, setMap] = useState('');
+  const [posts, setPosts] = useState([]);
+  const [albums, setAlbums] = useState([]);
+  const [email, setEmail] = useState('');
+  const [userEdited, setUserEdited] = useState(false)
+  const [errorMessages, setErrorMessages] = useState([])
+  const [editFormIsVisible, setEditFormIsVisible] = useState(false)
 
-    const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({})
 
-    useEffect(() => {
-        fetch(`http://localhost:3000/users/${userId}?_embed=posts&_embed=albums`)
-            .then(res => res.json())
-            .then(userData => {
-                console.log(userData.email)
+  useEffect(() => {
+      fetch(`http://localhost:3000/users/${userId}?_embed=posts&_embed=albums&_embed=movies`)
+          .then(res => res.json())
+          .then(userData => {
+              console.log(userData.email)
 
-                setUser(userData)
-                setEmail(userData.email)
-                setCompanyName(userData.company)
-                setAddress(userData.address)
-                setMap(userData.address.geo)
-                setFormData(userData)
+              setUser(userData)
+              setEmail(userData.email)
+              setCompanyName(userData.company)
+              setAddress(userData.address)
+              setMap(userData.address.geo)
+              setFormData(userData)
 
-                setPosts(userData.posts)
+              setPosts(userData.posts)
 
-                setAlbums(userData.albums)
-            })
-    }, [])
+              setAlbums(userData.albums)
 
-    const validateForm = () => {
-      let messages = []
+              setMovies(userData.movies)
+          })
+  }, [])
 
-      if (!formData.name) {
-          messages.push('Name is required')
-      }
-      if (!formData.username) {
-          messages.push('Username is required')
-      }
-      if (!formData.email) {
-          messages.push('Email is required')
-      }
-      if (!formData.address.street || !formData.address.suite || !formData.address.city || !formData.address.zipcode) {
-        messages.push('Address is required')
+
+  const validateForm = () => {
+    let messages = []
+
+    if (!formData.name) {
+        messages.push('Name is required')
+    }
+    if (!formData.username) {
+        messages.push('Username is required')
+    }
+    if (!formData.email) {
+        messages.push('Email is required')
+    }
+    if (!formData.address.street || !formData.address.suite || !formData.address.city || !formData.address.zipcode) {
+      messages.push('Address is required')
     }
 
-      if (messages.length === 0) {
-          return true
-      } else {
-          setErrorMessages(messages.reduce((str, current) => str + '; ' + current))
-          return false
-      }
+    if (messages.length === 0) {
+        return true
+    } else {
+        setErrorMessages(messages.reduce((str, current) => str + '; ' + current))
+        return false
+    }
   }
 
-    const userFormInputHandler = (event, property) => {
-      setFormData(prevState => {
-          const updatedData  = {...prevState}
+  const userFormInputHandler = (event, property) => {
+    setFormData(prevState => {
+        const updatedData  = {...prevState}
 
-          if (!property) {
-            updatedData[event.target.name] = event.target.value
-            } else {
-            updatedData[property][event.target.name] = event.target.value
-            }
-            return updatedData 
-      });
+        if (!property) {
+          updatedData[event.target.name] = event.target.value
+          } else {
+          updatedData[property][event.target.name] = event.target.value
+          }
+          return updatedData 
+    });
   };
 
-      const deleteUserHandler = (userId) => {
-        fetch(`http://localhost:3000/users/${userId}`, {
-            method: 'DELETE',
-        });
-    }
+  const editUserHandler = (event) => {
+    event.preventDefault()
 
-    const editUserHandler = (event) => {
-      event.preventDefault()
+      if (!validateForm()) {
+      return
+      }
 
-        if (!validateForm()) {
-        return
-        }
+      fetch(`http://localhost:3000/users/${userId}`, {
+        method: 'PUT',
+        body: JSON.stringify(
+          {...formData}
+          
+          ),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
 
-        fetch(`http://localhost:3000/users/${userId}`, {
-          method: 'PUT',
-          body: JSON.stringify(
-            {...formData}
-            
-            ),
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
-        })
-          .then((response) => response.json())
-          .then((json) => console.log(json));
-
-          setUserEdited(true)
-    }
+        setUserEdited(true)
+  }
     
 
   return (
@@ -263,9 +264,6 @@ const UserPage = () => {
           )}
           
       </div>
-      <div className='delete-user-wrapper'>
-        <button className='delete-button' onClick={() => deleteUserHandler(userId)}>Delete User</button>
-      </div>
             
 
       <div className='user-info-wrapper'>
@@ -314,7 +312,9 @@ const UserPage = () => {
             date={post.date}
             time={post.time}
           />
-
+          <div className='posts-delete-button-wrapper'>
+            <DeleteButton id={post.id} location='posts' />
+          </div>
         </div>
         ))}
       </div>
@@ -322,23 +322,48 @@ const UserPage = () => {
 
       <div className='albums-wrapper'>
         <h4 className='albums-title'>User albums:</h4>
-        <div className='albums-link-wrapper'>
-
+        <div className='albums-all-wrapper'>
           {albums && albums.length > 0 && albums.map((album, index) => (
-
-            <AlbumTitle
-              key={index}
-              title={album.title}
-              albumId={album.id}
-              name={album.name}
-              username={album.username}
-              email={album.email}
-              date={album.date}
-              time={album.time}
-            />
+            <div className='albums-link-wrapper'>
+              <div className='albums-delete-button-wrapper'>
+                <DeleteButton id={album.id} location='albums' />
+              </div>
+              <AlbumTitle
+                key={index}
+                title={album.title}
+                albumId={album.id}
+                name={album.name}
+                username={album.username}
+                email={album.email}
+                date={album.date}
+                time={album.time}
+              />
+            </div>
           ))}
+        </div>
+      </div>
 
-          </div>
+
+
+      <div className='movies-wrapper'>
+        <h4 className='movies-title'>User movies:</h4>
+        <div className='movies-all-wrapper'>
+        {movies && movies.length > 0 && movies.map((movie, index) => (
+            <div className='movies-link-wrapper' key={index} >
+              <div className='movies-delete-button-wrapper'>
+                <DeleteButton id={movie.id} location='movies' />
+              </div>
+              <MovieContent 
+              title={movie.title}
+              description={movie.description}
+              author={movie.author}
+              year={movie.year}
+              userId={movie.userId}
+              movieId={movie.id}
+            />
+            </div>
+          ))}
+        </div>
       </div>
 
     </PageWrapper>
