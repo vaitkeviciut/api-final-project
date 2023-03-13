@@ -1,52 +1,49 @@
-#page-content {
 
-    .button-new-user-wrapper {
-        .required-fiels-messages-wrapper {
-            .required-fields {
-                color: red;
-                font-weight: 600;
-            }
-        }
-        .post-create-link {
-            text-decoration: none;
-            color: #4F4F4F;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0);
-            border: none;
-            cursor: pointer;
-            
-            .plus-symbol {
-                font-size: 45px;
-                font-weight: 700;
-                padding: 10px 25px;
-                color: white;
-                background-color: #4F4F4F;
-                border-radius: 50%;
-            }
-            .plus-text {
-                font-size: 25px;
-                font-weight: 700;
-            }
-        }
-        .post-create-link:hover {
-            color: rgb(48, 162, 255);
-    
-            .plus-symbol {
-                background-color: rgb(48, 162, 255);
-            }
+.button-new-user-wrapper {
+    .required-fiels-messages-wrapper {
+        .required-fields {
+            color: red;
+            font-weight: 600;
         }
     }
-
-
-    .users-list {
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    .user-create-link {
+        text-decoration: none;
+        color: #4F4F4F;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        cursor: pointer;
+        
+        .plus-symbol {
+            font-size: 45px;
+            font-weight: 700;
+            padding: 10px 25px;
+            color: white;
+            background-color: #4F4F4F;
+            border-radius: 50%;
+        }
+        .plus-text {
+            font-size: 25px;
+            font-weight: 700;
+        }
     }
+    .post-create-link:hover {
+        color: rgb(48, 162, 255);
+
+        .plus-symbol {
+            background-color: rgb(48, 162, 255);
+        }
+    }
+}
+
+.users-list {
+list-style-type: none;
+padding-left: 0;
+display: flex;
+flex-direction: column;
+gap: 20px;
 }
 
 

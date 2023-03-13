@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PageWrapper from '../PageWrapper/PageWrapper';
-import CreateUserForm from './CreateUserForm';
 import UserItem from './UserItem';
 import './UsersPage.scss';
 
@@ -19,12 +18,12 @@ const UsersPage = () => {
         street: '',
         suite: '',
         city: '',
-        zipcode: '',
+        zipcode: ''
         },
     website: '',
     company: {
-        name: '',
-    },
+        name: ''
+    }
 }
 const [formData, setFormData] = useState(formDefaults)
 
@@ -107,18 +106,151 @@ const validateForm = () => {
       <div className='button-new-user-wrapper'>
 
           {formIsVisible ? (
-            <CreateUserForm onCreateNewUser={createNewUserHendler} onformInput={formInputHandler} formData={formData} formSetUp={setFormIsVisible} />
-            ):(
-            <button onClick={() => setFormIsVisible(true)} className='post-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create User</span></button>
-            )}
-
-          {userCreated ? (
-              <h2 className='success-created'>New user was created!</h2>
-          ) : (
-              <div className='required-fiels-messages-wrapper'>
-                <p className='required-fields'>{errorMessages}</p>
+            <form id="create-user-form" onSubmit={createNewUserHendler}>
+              <div className='form-control-wrapper'>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="name">Name:</label>
+                      <input 
+                      className="create-user-text" 
+                      type="text" 
+                      name="name" 
+                      id="name" 
+                      value={formData.name}
+                      onChange={formInputHandler}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="username">Username:</label>
+                      <input 
+                      className="create-user-text" 
+                      type="text"
+                      name="username" 
+                      id="username"  
+                      value={formData.username} 
+                      onChange={formInputHandler}
+                      />
+                  </div>
               </div>
-          )}
+              
+              <div className='form-control-wrapper'>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="email">Email:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="email" 
+                      id="email"
+                      value={formData.email}
+                      onChange={formInputHandler}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="phone">Phone:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="phone" 
+                      id="phone"
+                      value={formData.phone}
+                      onChange={formInputHandler}
+                      />
+                  </div>
+              </div>
+      
+              <div className='form-control-wrapper'>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="street">Street:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="street" 
+                      id="street"
+                      value={formData.address.street}
+                      onChange={(event) => formInputHandler( event, 'address')}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="suite">Suite:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="suite" 
+                      id="suite"
+                      value={formData.address.suite}
+                      onChange={(event) => formInputHandler( event, 'address')}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="city">City:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="city" 
+                      id="city"
+                      value={formData.address.city}
+                      onChange={(event) => formInputHandler( event, 'address')}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="zipcode">Zipcode:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="zipcode" 
+                      id="zipcode"
+                      value={formData.address.zipcode}
+                      onChange={(event) => formInputHandler( event, 'address')}
+                      />
+                  </div>
+              </div>
+      
+              <div className='form-control-wrapper'>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="website">Website:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="website" 
+                      id="website"
+                      value={formData.website}
+                      onChange={formInputHandler}
+                      />
+                  </div>
+                  <div className="form-control">
+                      <label className="create-user-section-title" htmlFor="name">Company name:</label>  
+                      <input 
+                      className="create-user-text" 
+                      type="text"  
+                      name="name" 
+                      id="cpmpany"
+                      value={formData.company.name}
+                      onChange={(event) => formInputHandler( event, 'company')}
+                      />
+                  </div>
+              </div>
+      
+              <div className='form-buttons-wrapper'>
+                  <div className='form-button-wrapper'>
+                      <button onClick={() => setFormIsVisible(false)} className="user-from-button" >Discard</button>
+                  </div>
+                  <div className="form-button-wrapper">
+                      <input className="user-from-button" id="submit" type="submit" value="Create User" />
+                  </div>
+              </div>
+              <div className='success-created-user'>
+                {userCreated ? (
+                    <h2 className='success-created'>User was created!</h2>
+                ) : (
+                  <div className='required-fiels-messages-wrapper'>
+                    <p className='required-fields'>{errorMessages}</p>
+                  </div>
+                )}
+            </div>
+              
+            </form>
+            ):(
+            <button onClick={() => setFormIsVisible(true)} className='user-create-link'><span className='plus-symbol'>+</span><span className='plus-text'>Create User</span></button>
+            )}
       </div>
 
       <ul className='users-list'>

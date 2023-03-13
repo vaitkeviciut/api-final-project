@@ -41,5 +41,16 @@
                 background-color: rgb(48, 162, 255);
             }
         }
-    } 
+    }
+    .success-created-post {
+        .success-created {
+            margin-top: 0;
+        }
+        .required-fiels-messages-wrapper {
+            .required-fields {
+                color: red;
+                font-weight: 600;
+            }
+        }
+    }
 }

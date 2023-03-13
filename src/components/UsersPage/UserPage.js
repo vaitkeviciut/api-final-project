@@ -4,8 +4,8 @@ import PageWrapper from '../PageWrapper/PageWrapper'
 import UserShortcutWrapper from '../partials/UserShortcutWrapper'
 import PostContent from '../partials/PostContent'
 import AlbumTitle from '../partials/AlbumTitle'
-import EditUserForm from './EditUserForm'
 import './UserPage.scss';
+import './CreateUserForm.scss'
 
 import userImage from '../images/user-picture-small.jpg';
 
@@ -20,6 +20,7 @@ const UserPage = () => {
     const [userEdited, setUserEdited] = useState(false)
     const [errorMessages, setErrorMessages] = useState([])
     const [editFormIsVisible, setEditFormIsVisible] = useState(false)
+    
     const [formData, setFormData] = useState({})
 
     useEffect(() => {
@@ -64,11 +65,16 @@ const UserPage = () => {
       }
   }
 
-    const userFormInputHandler = (event) => {
+    const userFormInputHandler = (event, property) => {
       setFormData(prevState => {
           const updatedData  = {...prevState}
-          updatedData[event.target.name] = event.target.value
-          return updatedData 
+
+          if (!property) {
+            updatedData[event.target.name] = event.target.value
+            } else {
+            updatedData[property][event.target.name] = event.target.value
+            }
+            return updatedData 
       });
   };
 
@@ -104,26 +110,161 @@ const UserPage = () => {
 
   return (
     <PageWrapper>
-      <div className='user-delete-button-wrapper'>
+      <div className='user-edit-button-wrapper'>
 
           {editFormIsVisible ? (
-          <EditUserForm onEditUser={() => editUserHandler(userId)} onFormInput={userFormInputHandler} formData={formData} formSetUp={setEditFormIsVisible} />
-          ):(
-            <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
-          )}
-
-          {userEdited ? (
-              <h2 className='success-created'>User was edited!</h2>
-          ) : (
-            <div className='required-fiels-messages-wrapper'>
-              <p className='required-fields'>{errorMessages}</p>
+          <form id="create-user-form" onSubmit={editUserHandler}>
+            <div className='form-control-wrapper'>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="name">Name:</label>
+                    <input 
+                    className="create-user-text" 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    value={formData.name}
+                    onChange={userFormInputHandler}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="username">Username:</label>
+                    <input 
+                    className="create-user-text" 
+                    type="text"
+                    name="username" 
+                    id="username"  
+                    value={formData.username} 
+                    onChange={userFormInputHandler}
+                    />
+                </div>
             </div>
+            
+            <div className='form-control-wrapper'>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="email">Email:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="email" 
+                    id="email"
+                    value={formData.email}
+                    onChange={userFormInputHandler}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="phone">Phone:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="phone" 
+                    id="phone"
+                    value={formData.phone}
+                    onChange={userFormInputHandler}
+                    />
+                </div>
+            </div>
+
+            <div className='form-control-wrapper'>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="street">Street:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="street" 
+                    id="street"
+                    value={formData.address.street}
+                    onChange={(event) => userFormInputHandler( event, 'address')}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="suite">Suite:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="suite" 
+                    id="suite"
+                    value={formData.address.suite}
+                    onChange={(event) => userFormInputHandler( event, 'address')}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="city">City:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="city" 
+                    id="city"
+                    value={formData.address.city}
+                    onChange={(event) => userFormInputHandler( event, 'address')}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="zipcode">Zipcode:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="zipcode" 
+                    id="zipcode"
+                    value={formData.address.zipcode}
+                    onChange={(event) => userFormInputHandler( event, 'address')}
+                    />
+                </div>
+            </div>
+
+            <div className='form-control-wrapper'>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="website">Website:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="website" 
+                    id="website"
+                    value={formData.website}
+                    onChange={userFormInputHandler}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="create-user-section-title" htmlFor="name">Company name:</label>  
+                    <input 
+                    className="create-user-text" 
+                    type="text"  
+                    name="name" 
+                    id="company"
+                    value={formData.company.name}
+                    onChange={(event) => userFormInputHandler( event, 'company')}
+                    />
+                </div>
+            </div>
+
+            <div className='form-buttons-wrapper'>
+                <div className='form-button-wrapper'>
+                    <button onClick={() => setEditFormIsVisible(false)} className="user-from-button" >Discard</button>
+                </div>
+                <div className="form-button-wrapper">
+                    <input className="user-from-button" id="submit" type="submit" value="Save Changes" />
+                </div>
+            </div>
+            <div className='success-edited'>
+                {userEdited ? (
+                    <h2 className='success-created'>User was edited!</h2>
+                ) : (
+                  <div className='required-fiels-messages-wrapper'>
+                    <p className='required-fields'>{errorMessages}</p>
+                  </div>
+                )}
+            </div>
+          </form>
+          ):(
+
+            <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
+            
           )}
-
           
-            <button className='delete-button' onClick={() => deleteUserHandler(userId)}>x</button>
       </div>
-
+      <div className='delete-user-wrapper'>
+        <button className='delete-button' onClick={() => deleteUserHandler(userId)}>Delete User</button>
+      </div>
+            
 
       <div className='user-info-wrapper'>
           <div className='user-photo-wrapper'>
