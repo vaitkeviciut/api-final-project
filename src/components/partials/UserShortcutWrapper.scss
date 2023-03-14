@@ -32,6 +32,9 @@
                     font-size: 14px;
                 }
             }
+            .user-name-link:hover {
+                color: rgb(48, 162, 255);
+            }
         }
     }
     .post-button-wrapper {
@@ -39,7 +42,7 @@
             background-color: rgba(255, 255, 255, 0);
             border: none;
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 500;
             cursor: pointer;
         }
         .delete-button:hover {

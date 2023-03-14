@@ -1,0 +1,46 @@
+.movie-link-wrapper {
+    .movie-link {
+        text-decoration: none;
+        color: #4F4F4F;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .movie-wrapper {
+            .movie-title {
+                color: rgb(48, 162, 255);
+                font-size: 21px;
+            }
+            .movie-description {
+                color: #9a9a9a;
+            }
+        }
+        .user-company-wrapper {
+            display: flex;
+            gap: 30px;
+            .movie-author {
+                margin: 0;
+
+                .movie-title {
+                font-weight: 600;
+                    
+                }
+            }
+            .movie-year {
+                margin: 0;
+
+                .movie-title {
+                    font-weight: 600;
+                        
+                    }
+            }
+        }
+    }
+    .movie-link:hover {
+        .movie-wrapper {
+            .movie-title {
+                color: rgb(118, 192, 253);
+            }
+        }
+    }
+}

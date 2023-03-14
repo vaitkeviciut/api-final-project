@@ -1,11 +1,12 @@
 import { NavLink, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Header.scss';
-import logo from '../images/logo.svg'
 
 import HomePage from '../HomePage/HomePage'
 import UsersPage from '../UsersPage/UsersPage'
 import PostsPage from '../PostsPage/PostsPage';
 import AlbumsPage from '../AlbumsPage/AlbumsPage';
+import MoviesPage from '../MoviesPage/MoviesPage'
 
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
       <div className='navigation-wrapper'>
       <div className='logo-wrapper'>
         <Link className='logo-link' to='/' element={<HomePage />} >
-          <img className='logo' src={logo} alt='logo' width='60' />
+          <h2 className='nav-logo'>JSON.API</h2>
         </Link>
       </div>
       <ul className='nav-list'>
@@ -29,6 +30,9 @@ const Header = () => {
         </li>
         <li className='nav-list-item'>
           <NavLink className='nav-list-item-link' to='/albums' element={<AlbumsPage />} >Albums</NavLink>
+        </li>
+        <li className='nav-list-item'>
+          <NavLink className='nav-list-item-link' to='/movies' element={<MoviesPage />} >Movies</NavLink>
         </li>
       </ul>
     </div>

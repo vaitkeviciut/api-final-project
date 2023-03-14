@@ -1,0 +1,55 @@
+.page-title-wrapper {
+    display: inline-block;
+    font-size: 50px;
+
+    .page-title {
+        font-size: 50px;
+        text-transform: uppercase;
+        margin: 0 0 70px;
+        font-weight: 900;
+        color: rgb(48, 162, 255);
+        letter-spacing: 5px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(30);
+    }
+    @keyframes typing {
+        from { width: 0 }
+    }
+}
+
+.movie-link-wrapper {
+    padding: 50px 70px 60px;
+    border-radius: 20px;
+
+    .movie-wrapper {
+        .movie-title {
+            color: rgb(48, 162, 255);
+            font-size: 21px;
+        }
+        .movie-description {
+            color: #9a9a9a;
+        }
+    }
+    .user-company-wrapper {
+        display: flex;
+        gap: 30px;
+        .movie-author {
+            margin: 0;
+
+            .movie-title {
+            font-weight: 600;
+                
+            }
+        }
+        .movie-year {
+            margin: 0;
+
+            .movie-title {
+                font-weight: 600;
+                    
+                }
+        }
+    }
+}
