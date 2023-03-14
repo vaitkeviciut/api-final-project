@@ -44,7 +44,12 @@
         .delete-button-wrapper {
             display: flex;
             justify-content: flex-end;
-            margin-bottom: 60px;
+            margin-bottom: 10px;
+        }
+        .photos-wrapper {
+            img {
+                width: 100%;
+            }
         }
     }
 }

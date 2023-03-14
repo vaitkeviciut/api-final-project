@@ -5,6 +5,7 @@ import PostContent from '../partials/PostContent'
 import AlbumTitle from '../partials/AlbumTitle'
 import DeleteButton from '../partials/DeleteButton'
 import MovieContent from '../partials/MovieContent'
+import axios from 'axios'
 
 import userImage from '../images/user-picture-small.jpg';
 
@@ -21,6 +22,7 @@ const UserPage = () => {
   const [map, setMap] = useState('');
   const [posts, setPosts] = useState([]);
   const [albums, setAlbums] = useState([]);
+  const [photos, setPhotos] = useState([]);
   const [email, setEmail] = useState('');
   const [userEdited, setUserEdited] = useState(false)
   const [errorMessages, setErrorMessages] = useState([])
@@ -48,6 +50,13 @@ const UserPage = () => {
               setMovies(userData.movies)
           })
   }, [userId])
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/albums/1/photos?_limit=1`).then((photos) => {
+      const photosData = photos.data;
+      setPhotos(photosData);
+    });
+  }, []);
 
 
   const validateForm = () => {
@@ -328,6 +337,16 @@ const UserPage = () => {
               <div className='albums-delete-button-wrapper'>
                 <DeleteButton id={album.id} location='albums' />
               </div>
+              {photos && photos.length > 0 ? (
+              <div className="photos-wrapper">
+                {photos.map((photo, index) => (
+                  <img key={index} src={photo.thumbnailUrl} />
+                ))}
+              </div>
+              ) : (
+                <p>No photos</p>
+              )}
+
               <AlbumTitle
                 key={index}
                 title={album.title}

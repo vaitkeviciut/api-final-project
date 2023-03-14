@@ -145,10 +145,16 @@
                 gap: 20px;
 
                 .post-item {
-                    padding: 70px 20px 30px;
+                    padding: 40px 20px 30px;
                     width: 260px;
                     background-color: white;
                     border-radius: 20px;
+                    
+                    .photos-wrapper {
+                        img {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }

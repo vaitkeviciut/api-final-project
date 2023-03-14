@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import AlbumTitle from '../partials/AlbumTitle'
 import PageWrapper from '../PageWrapper/PageWrapper';
 import DeleteButton from '../partials/DeleteButton';
@@ -9,6 +10,7 @@ import '../UsersPage/CreateUserForm.scss'
 
 const AlbumsPage = () => {
   const [albums, setAlbums] = useState([]);
+  const [photos, setPhotos] = useState([]);
   const [albumCreated, setAlbumCreated] = useState(false);
   const [formIsVisible, setFormIsVisible] = useState(false);
   const [errorMessages, setErrorMessages] = useState([]);
@@ -60,6 +62,14 @@ const AlbumsPage = () => {
       setAlbums(albumsData);
     });
   }, []);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/albums/1/photos?_limit=1`).then((photos) => {
+      const photosData = photos.data;
+      setPhotos(photosData);
+    });
+  }, []);
+
 
   const formInputHandler = (event) => {
     setFormData(prevState => {
@@ -207,6 +217,15 @@ const AlbumsPage = () => {
           <div className='delete-button-wrapper'>
             <DeleteButton id={album.id} location='albums' />
           </div>
+          {photos && photos.length > 0 ? (
+            <div className="photos-wrapper">
+              {photos.map((photo, index) => (
+                <img key={index} src={photo.thumbnailUrl} />
+              ))}
+            </div>
+          ) : (
+            <p>No photos</p>
+          )}
             <AlbumTitle 
               title={album.title}
               name={album.name}
@@ -220,6 +239,7 @@ const AlbumsPage = () => {
         </div>
         </>
         ))}
+          
       </div>
   </PageWrapper>
   )
