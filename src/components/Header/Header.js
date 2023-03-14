@@ -1,5 +1,4 @@
 import { NavLink, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import './Header.scss';
 
 import HomePage from '../HomePage/HomePage'

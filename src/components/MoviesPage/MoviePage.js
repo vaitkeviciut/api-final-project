@@ -22,7 +22,7 @@ const MoviePage = () => {
       
 
     });
-  }, []);
+  }, [movieId]);
 
   const validateForm = () => {
     let messages = []

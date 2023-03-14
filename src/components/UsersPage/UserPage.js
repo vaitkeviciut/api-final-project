@@ -47,7 +47,7 @@ const UserPage = () => {
 
               setMovies(userData.movies)
           })
-  }, [])
+  }, [userId])
 
 
   const validateForm = () => {

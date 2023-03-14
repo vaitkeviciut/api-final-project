@@ -23,7 +23,7 @@ const AlbumPage = () => {
         setDate(albumsData.date)
         setTime(albumsData.time)
       });
-    }, []);
+    }, [albumId]);
 
 
   return (
