@@ -27,29 +27,58 @@ header {
                 color: rgb(118, 192, 253);
             }
         }
-
-        .nav-list {
-            list-style-type: none;
+        .right-side-nav-wrapper {
             display: flex;
-            gap: 30px;
-            .nav-list-item{
-                .nav-list-item-link {
-                    text-decoration: none;
-                    font-size: 17px;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    color: #4F4F4F;
+            gap: 20px;
+            align-items: center;
+
+            .search-input-wrapper {
+                form {
+                    display: flex;
+                    gap: 10px;
+
+                    .search-input {
+                        border: 1px solid rgb(200, 200, 200);
+                        padding: 7px 10px;
+                    }
+                    button {
+                        background-color: rgb(48, 162, 255);
+                        color: white;
+                        border: none;
+                        padding: 0 15px;
+                        cursor: pointer;
+                    }
+                    button:hover {
+                        background-color: rgb(118, 192, 253);
+                        color: white;
+                    }
                 }
-                .nav-list-item-link:hover {
-                    color: rgb(48, 162, 255);
-                }
-                .nav-list-item-link.active {
-                    color: rgb(48, 162, 255);
-                    padding-bottom: 3px;
-                    border-bottom: 3px solid rgb(48, 162, 255);
+            }
+
+            .nav-list {
+                list-style-type: none;
+                display: flex;
+                gap: 30px;
+                .nav-list-item{
+                    .nav-list-item-link {
+                        text-decoration: none;
+                        font-size: 17px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        color: #4F4F4F;
+                    }
+                    .nav-list-item-link:hover {
+                        color: rgb(48, 162, 255);
+                    }
+                    .nav-list-item-link.active {
+                        color: rgb(48, 162, 255);
+                        padding-bottom: 3px;
+                        border-bottom: 3px solid rgb(48, 162, 255);
+                    }
                 }
             }
         }
+
         
     }    
 }   

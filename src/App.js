@@ -1,5 +1,6 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header/Header'
+import SearchPage from './components/SearchPage/SearchPage'
 import HomePage from './components/HomePage/HomePage'
 import UsersPage from './components/UsersPage/UsersPage'
 import UserPage from './components/UsersPage/UserPage'
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
+        <Route path="/search/:phrase" element={<SearchPage />} />
         <Route path='/' element={<HomePage />} />
 
         <Route path='/users' element={<UsersPage />} />

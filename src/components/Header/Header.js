@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { NavLink, Link } from 'react-router-dom';
 import './Header.scss';
 
@@ -9,6 +10,7 @@ import MoviesPage from '../MoviesPage/MoviesPage'
 
 
 const Header = () => {
+  const [search, setSearch] = useState("");
   return (
     <header>
       <div className='navigation-wrapper'>
@@ -17,6 +19,19 @@ const Header = () => {
           <h2 className='nav-logo'>JSON.API</h2>
         </Link>
       </div>
+      <div className='right-side-nav-wrapper'>
+      <div className='search-input-wrapper'>
+      <form action={`/search/${search}`}>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search..."
+            onChange={(event) => setSearch(event.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
       <ul className='nav-list'>
         <li className='nav-list-item'>
           <NavLink className='nav-list-item-link' to='/' element={<HomePage />}>Home</NavLink>
@@ -34,6 +49,7 @@ const Header = () => {
           <NavLink className='nav-list-item-link' to='/movies' element={<MoviesPage />} >Movies</NavLink>
         </li>
       </ul>
+      </div>
     </div>
   </header>
     
