@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Header.scss';
-import logo from '../images/logo.svg'
 
 import HomePage from '../HomePage/HomePage'
 import UsersPage from '../UsersPage/UsersPage'

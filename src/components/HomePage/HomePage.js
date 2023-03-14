@@ -8,6 +8,10 @@ import axios from 'axios';
 import './HomePage.scss';
 
 import userImage from '../images/user-picture-small.jpg';
+import wave1 from '../images/1.png'
+import wave2 from '../images/2.png'
+import wave3 from '../images/3.png'
+
 
 
 const HomePage = () => {

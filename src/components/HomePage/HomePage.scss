@@ -11,6 +11,7 @@
             font-size: 90px;
             font-weight: 900;
             margin-bottom: 50px;
+            margin-left: 20px;
             width: 100%;
             white-space: nowrap;
             overflow: hidden;
@@ -23,6 +24,7 @@
             font-size: 20px;
             max-width: 500px;
             margin-top: 0;
+            margin-left: 20px;
         }
     }
 }
@@ -45,11 +47,14 @@
         display: flex;
         flex-direction: column;
         gap: 60px;
+        margin: 0 20px;
 
         .post-and-user-section-wrapper {
             display: grid;
             grid-template-columns: 5fr 3fr;
             gap: 40px;
+            
+            
 
             .all-posts-wrapper {
                 .section-title-wrapper {
@@ -131,7 +136,7 @@
 
                 .post-item {
                     padding: 70px 20px 30px;
-                    width: calc((100% / 4) - 60px);
+                    width: 260px;
                     background-color: white;
                     border-radius: 20px;
                 }
@@ -158,7 +163,7 @@
                 flex-wrap: wrap;
 
                 .post-item {
-                    width: calc(50% - 10px);
+                    width: 620px;
                 }
             }
         }
