@@ -26,6 +26,16 @@
             margin-top: 0;
             margin-left: 20px;
         }
+        .get-started-link {
+            padding: 15px 40px;
+            background-color: white;
+            color: rgb(48, 162, 255);
+            font-size: 16px;
+        }
+        .get-started-link:hover {
+            background-color: rgb(48, 162, 255);
+            color: white;
+        }
     }
 }
 

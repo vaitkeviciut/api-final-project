@@ -10,6 +10,7 @@ import AlbumPage from './components/AlbumsPage/AlbumPage'
 import MoviesPage from './components/MoviesPage/MoviesPage'
 import MoviePage from './components/MoviesPage/MoviePage'
 
+import '../src/components/HomePage/HomePage.scss'
 import './App.css';
 
 function App() {
@@ -33,8 +34,13 @@ function App() {
 
         <Route path='*' element={
           <div>
-            <h1>404 Error</h1>
-            <Link to='/'>Back to the main page</Link>
+            <div className='hero-box-wrapper'>
+              <div className='hero-box-content-wrapper'>
+                <h1 className='hero-box-title'>JSON.API...</h1>
+                <Link className='get-started-link' to='/'>Lets het started</Link>
+              </div>
+            </div>
+            
           </div>
         } />
 
