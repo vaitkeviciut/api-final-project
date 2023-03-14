@@ -148,12 +148,18 @@
         gap: 30px;
 
         .albums-link-wrapper {
-            padding: 20px 0 30px;
+            padding: 20px 10px 30px;
 
             .albums-delete-button-wrapper {
                 display: flex;
                 justify-content: flex-end;
                 margin-bottom: 15px;
+
+            }
+            .photos-wrapper {
+                img {
+                    width: 90%;
+                }
             }
         }
         
@@ -176,9 +182,7 @@
         flex-direction: column;
 
         .movies-link-wrapper {
-            padding: 20px 0 60px;
             border-bottom: 1px solid rgb(204, 204, 204);
-            
 
             .movies-delete-button-wrapper {
                 display: flex;

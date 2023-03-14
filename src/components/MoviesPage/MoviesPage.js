@@ -54,6 +54,7 @@ const MoviesPage = () => {
     setFormData(prevState => {
         const updatedData  = {...prevState}
         updatedData[event.target.name] = event.target.value
+        
         return updatedData 
     });
   };

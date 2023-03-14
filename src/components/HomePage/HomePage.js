@@ -8,10 +8,6 @@ import axios from 'axios';
 import './HomePage.scss';
 
 import userImage from '../images/user-picture-small.jpg';
-import wave1 from '../images/1.png'
-import wave2 from '../images/2.png'
-import wave3 from '../images/3.png'
-
 
 
 const HomePage = () => {
@@ -19,6 +15,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
   const [albums, setAlbums] = useState([]);
+  const [photos, setPhotos] = useState([]);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -40,6 +37,13 @@ const HomePage = () => {
     axios.get(`http://localhost:3000/albums?_limit=8`).then((albums) => {
       const albumsData = albums.data;
       setAlbums(albumsData);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/albums/1/photos?_limit=1`).then((photos) => {
+      const photosData = photos.data;
+      setPhotos(photosData);
     });
   }, []);
 
@@ -118,6 +122,16 @@ const HomePage = () => {
             </div>
             <div className='one-album-all-wrapper'>{albums && albums.length > 0 && albums.map((album, index) => (
               <div className='post-item' key={index}>
+                
+                {photos && photos.length > 0 ? (
+                <div className="photos-wrapper">
+                  {photos.map((photo, index) => (
+                    <img key={index} src={photo.thumbnailUrl} />
+                  ))}
+                </div>
+                ) : (
+                  <p>No photos</p>
+                )}
                   <AlbumTitle 
                     title={album.title}
                     name={album.name}

@@ -32,7 +32,7 @@ const PostPage = () => {
             setComments(post.comments)
             setFormData(post)
         })
-  }, [])
+  }, [postId])
 
   const validateForm = () => {
     let messages = []

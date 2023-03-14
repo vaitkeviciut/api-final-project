@@ -1,3 +1,24 @@
+.page-title-wrapper {
+    display: inline-block;
+    font-size: 50px;
+
+    .page-title {
+        font-size: 50px;
+        text-transform: uppercase;
+        margin: 0 0 70px;
+        font-weight: 900;
+        color: rgb(19, 88, 145);
+        letter-spacing: 5px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(30);
+    }
+    @keyframes typing {
+        from { width: 0 }
+    }
+}
+
 .all-movies-wrapper {
     display: flex;
     flex-direction: column;
