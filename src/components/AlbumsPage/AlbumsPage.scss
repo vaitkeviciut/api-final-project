@@ -1,3 +1,24 @@
+.page-title-wrapper {
+    display: inline-block;
+    font-size: 50px;
+
+    .page-title {
+        font-size: 50px;
+        text-transform: uppercase;
+        margin: 0 0 70px;
+        font-weight: 900;
+        color: rgb(48, 162, 255);
+        letter-spacing: 5px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 3s steps(30);
+    }
+    @keyframes typing {
+        from { width: 0 }
+    }
+}
+
 .button-new-user-wrapper {
     .user-create-link:hover {
         .plus-symbol {

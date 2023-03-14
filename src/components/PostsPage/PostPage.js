@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom'
 import PageWrapper from '../PageWrapper/PageWrapper';
+import DeleteButton from '../partials/DeleteButton';
 
 import userImage from '../images/user-picture-small.jpg'
 
 import './PostPage.scss'
-import '../UsersPage/CreateUserForm.scss'
+import './CreatePostForm.scss'
 
 
 const PostPage = () => {
@@ -64,11 +65,6 @@ const PostPage = () => {
     });
   };
 
-  const deleteCommentHandler = (id) => {
-    fetch(`http://localhost:3000/comments/${id}`, {
-        method: 'DELETE',
-    });
-  }
 
   const editPostHandler = (event) => {
     event.preventDefault()
@@ -185,13 +181,17 @@ const PostPage = () => {
                 <div key={index} className='one-comment-wrapper'>
                     <div className='one-comment-header-wrapper'>
                         <p className='comment-email'>{comment.email}</p>
-                      <div className='user-delete-button-wrapper'>
-                          <button className='delete-button' onClick={() => deleteCommentHandler(comment.id)} >x</button>
-                    </div>
+                      <div className='comment-delete-button-wrapper'>
+                          <DeleteButton id={comment.id} location='comments' />
+                      </div>
                     </div>
                     <div className='comments-content-wrapper'>
                         <h5 className='comment-name'>{comment.name}</h5>
                         <p className='comment-body'>{comment.body}</p>
+                    </div>
+                    <div className='comments-bottom-wrapper'>
+                        <span className='comment-date'>{comment.date}</span>
+                        <span className='comment-time'>{comment.time}</span>
                     </div>
                 </div>
               ))}

@@ -15,7 +15,7 @@ const Header = () => {
       <div className='navigation-wrapper'>
       <div className='logo-wrapper'>
         <Link className='logo-link' to='/' element={<HomePage />} >
-          <img className='logo' src={logo} alt='logo' width='60' />
+          <h2 className='nav-logo'>JSON.API</h2>
         </Link>
       </div>
       <ul className='nav-list'>

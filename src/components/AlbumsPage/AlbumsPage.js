@@ -94,6 +94,9 @@ const AlbumsPage = () => {
 
   return (
   <PageWrapper>
+    <div className='page-title-wrapper'>
+        <h1 className='page-title'>Albums...</h1>
+      </div>
 
       <div className='button-new-user-wrapper'>
 

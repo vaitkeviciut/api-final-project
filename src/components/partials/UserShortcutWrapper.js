@@ -5,12 +5,6 @@ import './UserShortcutWrapper.scss';
 
 const UserShortcutWrapper = ({ image, userId, name, username, companyName, postId }) => {
   
-    const deletePostHandler = (postId) => {
-        fetch(`http://localhost:3000/posts/${postId}`, {
-            method: 'DELETE',
-            });
-          }
-  
     return (
     <div className='user-and-delete-button-wrapper'>
         <div className="user-shortcut-wrapper">
@@ -26,9 +20,6 @@ const UserShortcutWrapper = ({ image, userId, name, username, companyName, postI
                     </div>
                 </Link>
             </div>
-        </div>
-        <div className='post-button-wrapper'>
-            <button className='delete-button' onClick={() => deletePostHandler(postId)}>x</button>
         </div>
     </div>
   )

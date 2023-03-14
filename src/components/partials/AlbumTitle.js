@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { firstLetterUpperCase } from '../functions.js';
+// import { firstLetterUpperCase } from '../functions.js';
 import './AlbumTitle.scss';
 
 const AlbumTitle = ({ title, name, username, email, date, time, albumId, userId }) => {
@@ -8,7 +8,7 @@ const AlbumTitle = ({ title, name, username, email, date, time, albumId, userId 
     <>
     <div className='album-wrapper'>
       <Link className='album-link' to={`/albums/` + albumId}>
-        <h4 className='user-album-title'>{firstLetterUpperCase(title)}</h4>
+        <h4 className='user-album-title'>{title}</h4>
       </Link>
     </div>
     <div className='album-bottom-wrapper'>

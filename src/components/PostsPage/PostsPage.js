@@ -110,6 +110,10 @@ useEffect(() => {
 
   return (
     <PageWrapper>
+      <div className='page-title-wrapper'>
+        <h1 className='page-title'>Posts...</h1>
+      </div>
+
       <div className='button-new-user-wrapper'>
 
         {formIsVisible ? (
@@ -249,7 +253,9 @@ useEffect(() => {
                 time={post.time}
                 userId={post.userId}
               />
+              <div className='post-delete-button-wrapper'>
               <DeleteButton id={post.id} location='posts' />
+              </div>
               </div>
             ))}
           </div>
