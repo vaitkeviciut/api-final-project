@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import { firstLetterUpperCase } from '../functions.js'
 import PageWrapper from '../PageWrapper/PageWrapper';
 import axios from 'axios';
 
@@ -44,7 +43,7 @@ const AlbumPage = () => {
       <div className='album-wrapper'>
         
             <div className='album-content'>
-              <h2 className='album-title'>{firstLetterUpperCase(title)}</h2>
+              <h2 className='album-title'>{title}</h2>
               <div className='user-wrapper'>
                 <span className='name'>by {name} ({username})</span>
                 <span className='email'>{email}</span>
