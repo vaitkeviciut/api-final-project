@@ -4,10 +4,15 @@ import PageWrapper from '../PageWrapper/PageWrapper'
 import axios from 'axios'
 
 import './MoviePage.scss'
+import '../UsersPage/CreateUserForm.scss'
+
 
 const MoviePage = () => {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState({});
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [author, setAuthor] = useState('');
+  const [year, setYear] = useState('');
   const [movieEdited, setMovieEdited] = useState(false)
   const [errorMessages, setErrorMessages] = useState([])
   const [editFormIsVisible, setEditFormIsVisible] = useState(false)
@@ -16,10 +21,12 @@ const MoviePage = () => {
 
   useEffect(() => {
     axios.get(`http://localhost:3000/movies/${movieId}`).then((movies) => {
-      const moviesData = movies.data;
-      console.log(moviesData);
-      setMovie(moviesData)
-      
+      const movie = movies.data;
+      console.log(movie);
+      setTitle(movie.title)
+      setDescription(movie.description)
+      setAuthor(movie.author)
+      setYear(movie.year)
 
     });
   }, [movieId]);
@@ -157,21 +164,20 @@ const MoviePage = () => {
             </div>
           )}
       </div>
-        
       </form>
-    ):(
-      <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
-      )}
-    </div>
+      ):(
+        <button onClick={() => setEditFormIsVisible(true)} className='edit-button'>Edit</button>
+        )}
+      </div>
 
     <div className="movie-link-wrapper">
         <div className="movie-wrapper">
-            <h3 className="movie-title">{movie.title}</h3>
-            <p className="movie-description">{movie.description}</p>
+            <h3 className="movie-title">{title}</h3>
+            <p className="movie-description">{description}</p>
         </div>
         <div className='user-company-wrapper'>
-          <p className='movie-author'><span className='movie-title'>Director:</span> {movie.author}</p>
-          <p className='movie-year'><span className='movie-title'>Released:</span> {movie.year}</p>
+          <p className='movie-author'><span className='movie-title'>Director:</span> {author}</p>
+          <p className='movie-year'><span className='movie-title'>Released:</span> {year}</p>
         </div>
     </div>
 
